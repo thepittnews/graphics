@@ -1,0 +1,24 @@
+.score-division {
+	stroke: #444;
+}
+
+.graphic-header {
+	font-size: 30px;
+	alignment-baseline: middle;
+	text-anchor: middle;
+	font-family: 'Roboto Mono', monospace;
+}
+
+.score-text {
+	font-size: 20px;
+	alignment-baseline: middle;
+	text-anchor: middle;
+	font-family: 'Roboto Mono', monospace;
+}
+
+.uni-text {
+	font-size: 15px;
+	font-family: 'Roboto Mono', monospace;
+	fill: #000000;
+	alignment-baseline: middle;
+}

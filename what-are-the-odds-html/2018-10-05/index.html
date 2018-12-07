@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://d3js.org/d3.v5.js"></script>
+	<script src="https://d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
+	<script src="https://pittnews.com/wp-content/uploads/2018/09/responsive.js"></script>
+	<link rel="stylesheet" href="main.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+</head>
+<body>
+	<div class="CHANGE">
+	</div>
+	<script>
+		var w=900, h=600, padding1=70, padding=10;
+		var svg=d3.select(".CHANGE")
+			.append("svg")
+			.attr("width",w)
+			.attr("height",h)
+			.call(responsivefy);
+		var data = [
+			[{name: "Pitt", score: 30.4, fillcolor: "#CDB87D", textcolor: "#1C2957", team: 1}, {name: "Syracuse", score: 28.4, fillcolor: "#D44500", textcolor: "#FFFFFF", team: 2}],
+			[{name: "LSU", score: 34.2, fillcolor: "#461D7C", textcolor: "#FDD023", team: 1}, {name: "Florida", score: 20.2, fillcolor: "#0021A5", textcolor: "#FFFFFF", team: 2}],
+			[{name: "Oklahoma", score: 42.0, fillcolor: "#841617", textcolor: "#FDF9D8", team: 1}, {name: "Texas", score: 26.4, fillcolor: "#BF5700", textcolor: "#FFFFFF", team: 2}],
+			[{name: "Philadelphia Eagles", score: 28.8, fillcolor: "#004C54", textcolor: "#A5ACAF", team: 1}, {name: "Minnesota Vikings", score: 13.8, fillcolor: "#4F2683", textcolor: "#FFC62F", team: 2}]
+		];
+		svg.append("text")
+			.attr("x", w/2)
+			.attr("y", padding1/2)
+			.text("Projected point totals for college and professional football games")
+			.attr("class", "graphic-header");
+		for (var i = 0; i < data.length; i++) {
+			var g = svg.append("g")
+					.attr("class", "score-container")
+					.attr("transform", "translate(" + (w/2) + "," + ((2*i+1)*h/10 + padding1) + ")");
+			g.append("path")
+				.attr("d", "M0 " + (-h/20) + " l 0 " + (h/10))
+				.attr("class", "score-division");
+			var overunder = data[i][0].score + data[i][1].score;
+			g.append("g")
+				.attr("class", "team1")
+				.attr("transform", "scale(-1,1)")
+				.selectAll("rect")
+				.data([data[i][0]])
+				.enter()
+				.append("rect")
+				.attr("fill", function(d) { return d.fillcolor; })
+				.attr("y", -h/20)
+				.attr("x", function(d) { return padding})
+				.attr("width", 0)
+				.attr("height", h/10)
+				.transition()
+				.duration(500)
+				.attr("width", function(d) {
+					return d.score/overunder*(w/2 - padding1) - padding;
+				});
+			g.append("g")
+				.attr("class", "team2")
+				.selectAll("rect")
+				.data([data[i][1]])
+				.enter()
+				.append("rect")
+				.attr("fill", function(d) { return d.fillcolor; })
+				.attr("y", -h/20)
+				.attr("x", function(d) { return padding})
+				.attr("width", 0)
+				.attr("height", h/10)
+				.transition()
+				.duration(500)
+				.attr("width", function(d) {
+					return d.score/overunder*(w/2 - padding1) - padding;
+				});
+			g.selectAll("text")
+				.data(data[i])
+				.enter()
+				.append("text")
+				.attr("class", "score-text")
+				.text(function(d) { return d.score; })
+				.attr("x", function(d) {
+					if (d.team == 1) {
+						return -padding - d.score/overunder*(w/4 - padding1);
+					} else {
+						return padding + d.score/overunder*(w/4 - padding1);
+					}
+				})
+				.attr("fill", function(d) { return d.textcolor; })
+				.attr("fill-opacity", 0)
+				.transition()
+				.duration(500)
+				.attr("fill-opacity", 1);
+			g.append("g")
+				.attr("class", "text-container")
+				.selectAll("text")
+				.data(data[i])
+				.enter()
+				.append("text")
+				.attr("class", "uni-text")
+				.text(function(d) { return d.name; })
+				.attr("x", function(d) { 
+					if (d.team == 1) {
+						return -w/2;
+					} else {
+						return w/2;
+					}
+				})
+				.attr("text-anchor", function(d) { 
+					if (d.team == 1) {
+						return "start";
+					} else {
+					return "end"; 
+					}
+				});
+		}
+		
+	</script>
+</body>
+</html>
