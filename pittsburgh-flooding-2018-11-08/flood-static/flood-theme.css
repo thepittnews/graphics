@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Montserrat:300|Open+Sans');
+
+html, body {
+	margin: 0px;
+}
+
+.navigation {
+	min-width: 300px;
+	min-height: 50px;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000; /*all the way at the top*/
+}
+
+.navigation-header {
+	min-height: 50px;
+	width: 100%;
+	position: absolute;
+}
+
+.navigation-header .brand {
+	text-align: center;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	padding: auto;
+}
+
+.brand img {
+	height: 50px;
+}
+
+.header {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header-container {
+	width: 100%;
+	max-width: 900px;
+	z-index: 1;
+	border-radius: 5px;
+	background-color: rgba(256, 256, 256, 0.8);
+}
+
+.story-header {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	z-index: 1;
+}
+
+.headline {
+	font-family: "EB Garamond", times, serif;
+	color: #5c6d89;
+	font-size: 40px;
+}
+
+.byline-container {
+	font-family: Montserrat, sans-serif;
+	color: #5c6d89;
+}
+
+.byline-container a {
+	text-decoration: none;
+	color: #5c6d89;
+}
+
+.byline-container a:hover {
+	text-decoration: underline;
+}
+
+.main {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+
+.illustrations {
+	position: fixed;
+	width: 100%;
+	min-height: 100vh;
+	top: 0;
+}
+
+.main .illustrations .illustration-group {
+    position: absolute;
+    transition: opacity 1s ease-in-out; 
+}
+
+.main .illustrations .illustration-group.hide {
+	opacity: 0; 
+}
+
+.main .illustrations picture.picture {
+	-webkit-transition: opacity 1s ease-in-out;
+	transition: opacity 1s ease-in-out; 
+	-moz-transition: opacity 1s ease-in-out;
+	opacity: 1;
+}
+
+.main .illustrations picture.picture.hide {
+	opacity: 0; 
+}
+
+.main .illustrations img, .story .illustrations source {
+	height: 100vh;
+	min-width: 100vw;
+	-o-object-fit: cover;
+	object-fit: cover;
+	position: absolute;
+	transition: opacity 1s ease-in-out; 
+}
+
+.story-content {
+	margin-top: 300px;
+	margin-bottom: 300px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.section-content {
+	width: 90%;
+	margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+	.story-header {
+		padding: 10px;
+	}
+
+	.story-section {
+		width: 80%;
+		margin: 0 auto;
+		align-self: flex-end;
+		z-index: 1;
+	}
+
+	.story-section p {
+		font-size: 20px;
+	}
+}
+
+@media (min-width: 801px) {
+	.story-header {
+		padding: 10px;
+	}
+
+	.story-section {
+		width: 60%;
+		margin: 0 auto;
+		align-self: flex-end;
+		z-index: 1;
+	}
+}
+
+.section-headline {
+	font-family: "EB Garamond", times, serif;
+	font-size: 36px;
+}
+
+.story-section p {
+	font-family: "Open Sans", sans-serif;
+}
+
+.footer {
+	width: 100%;
+	display: flex;
+}
+
+.attribution {
+	width: 60%;
+	margin: 0 auto;
+	z-index: 1;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.attribution-name {
+	color: #DDDDDD;
+	font-family: Montserrat, sans-serif;
+	font-size: 20px;
+}
+
+.section-one {
+	background-color: rgba(221, 237, 255, 0.95);
+}
