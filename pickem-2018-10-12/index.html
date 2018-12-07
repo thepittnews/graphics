@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://d3js.org/d3.v5.js"></script>
+	<script src="https://pittnews.com/wp-content/uploads/2018/09/responsive.js"></script>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<div class="CHANGE">
+		<img src="plot-1.png" width = "600px"></div>
+	</div>
+	<script>
+		var w=900, h=600, padding=20;
+		var div=d3.select(".CHANGE");
+		pairings = ["Notre Dame vs. Pitt",
+					"Miami vs. Virginia",
+					"Louisville vs. Boston College",
+					"Virginia Tech vs. UNC",
+					"Duke vs. Georgia Tech",
+					"Michigan vs. Wisconsin"];
+		var images = [];
+		for (var i = 0; i < 6; i++) {
+			images[i] = new Image(); images[i].src = "plot-" + (i + 1) + ".png";
+		}
+		var select = div.append("select")
+			.attr("class", "custom-select").selectAll("option").data(pairings).enter().append("option")
+				.text(function(d) { return d; });
+		select.on("change", function() {
+
+		})
+	</script>
+</body>
+</html>

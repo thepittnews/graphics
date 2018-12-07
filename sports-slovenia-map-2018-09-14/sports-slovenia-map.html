@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<div class="CHANGE">
+</div>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<style>
+	.border {
+		fill: #aaaaaa;
+		stroke: #000000;
+	}
+	.plane-path {
+		stroke: red;
+		stroke-width:2px;
+	}
+</style>
+<script>
+function responsivefy(svg) {
+    // get container + svg aspect ratio
+    var container = d3.select(svg.node().parentNode),
+        width = parseInt(svg.style("width")),
+        height = parseInt(svg.style("height")),
+        aspect = width / height;
+
+    // add viewBox and preserveAspectRatio properties,
+    // and call resize so that svg resizes on inital page load
+    svg.attr("viewBox", "0 0 " + width + " " + height)
+        .attr("perserveAspectRatio", "xMidYMid")
+        .call(resize);
+
+    // to register multiple listeners for same event type, 
+    // you need to add namespace, i.e., 'click.foo'
+    // necessary if you call invoke this function for multiple svgs
+    // api docs: https://github.com/mbostock/d3/wiki/Selections#on
+    d3.select(window).on("resize." + container.attr("id"), resize);
+
+    // get width of container and resize svg to fit it
+    function resize() {
+        var targetWidth = parseInt(container.style("width"));
+        svg.attr("width", targetWidth);
+        svg.attr("height", Math.round(targetWidth / aspect));
+    }
+}
+	function responsivefy(svg) {
+    // get container + svg aspect ratio
+    var container = d3.select(svg.node().parentNode),
+        width = parseInt(svg.style("width")),
+        height = parseInt(svg.style("height")),
+        aspect = width / height;
+
+    // add viewBox and preserveAspectRatio properties,
+    // and call resize so that svg resizes on inital page load
+    svg.attr("viewBox", "0 0 " + width + " " + height)
+        .attr("perserveAspectRatio", "xMidYMid")
+        .call(resize);
+
+    // to register multiple listeners for same event type, 
+    // you need to add namespace, i.e., 'click.foo'
+    // necessary if you call invoke this function for multiple svgs
+    // api docs: https://github.com/mbostock/d3/wiki/Selections#on
+    d3.select(window).on("resize." + container.attr("id"), resize);
+
+    // get width of container and resize svg to fit it
+    function resize() {
+        var targetWidth = parseInt(container.style("width"));
+        svg.attr("width", targetWidth);
+        svg.attr("height", Math.round(targetWidth / aspect));
+    }
+}
+	var width = 900, height = 600;
+	var svg = d3.select(".CHANGE")
+				.append("svg")
+				.attr("width", width)
+				.attr("height", height)
+				.call(responsivefy);
+	
+	
+	var cities = [[-79.99, 40.44],
+					[14.50, 46.06]];
+	var scale = 50;
+	var center = [(cities[0][0] + cities[1][0])/2,
+					(cities[0][1] + cities[1][1])/2];
+	var bounds = [[cities[0][1], cities[1][1]], [cities[0][0], cities[1][0]]];
+	var xextent = Math.abs(bounds[0][0] - bounds[0][1]), yextent = Math.abs(bounds[1][0] - bounds[1][1]);
+	var hscale = scale*height / yextent, vscale = scale*width/xextent;
+
+	var scale = (hscale < vscale) ? hscale : vscale;
+	var projection = d3.geoMercator().center(center).scale(scale);
+
+	var path = d3.geoPath().projection(projection)
+
+	d3.queue()
+	    .defer(d3.json, "https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json")
+	    .await(ready);
+	function ready(error, world) {
+		for (var i = 0; i < world.features.length; i++) {
+			if (world.features[i].properties.name == "Slovenia") {
+				console.log(world.features[i]);
+			}
+		}
+		svg.append("g")
+			.attr("class", "world")
+			.selectAll("path")
+			.data(world.features)
+			.enter()
+			.append("path")
+			.attr("d", path)
+			.attr("class", "border");
+		var initialPos = cities[1];
+		var projected_pos = projection(initialPos);
+		var line = d3.path()
+						.moveTo(projection(initialPos[0], initialPos[1]));
+		svg.append("g")
+			.attr("class", "plane")
+			.append("path")
+			.datum(cities[1])
+			.attr("d", line)
+			.attr("class", "plane-path")
+			.transition()
+			.duration(5000)
+			.attrTween("d", pathTween(cities[0]));
+		function pathTween(finalPos) {
+			return function(d) {
+				
+				var interpolatex = d3.interpolate(initialPos[0], finalPos[0]);
+				var interpolatey = d3.interpolate(initialPos[1], finalPos[1]);
+				return function(t) {
+					d = [interpolatex(t), interpolatey(t)];
+					d = projection(d);
+					return "M" + projected_pos[0] + " " + projected_pos[1] + "L" + d[0] + " " + d[1];
+				}
+			}
+		}
+	}
+
+</script>
