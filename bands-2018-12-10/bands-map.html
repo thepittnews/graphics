@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+   crossorigin=""></script>
+  <style>
+    #map {
+      width: 100%;
+      height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+	<div id="map"></div>
+
+	<script>
+		var map = L.map('map');
+
+    var matches = [
+      {
+        lineColor: '#CDB87D',
+        lineText: "Pitt Band traveled to Charlotte, N.C. to play for the mens football ACC Championship game versus the Clemson Tigers.",
+        teams: [
+          { name: 'Bank of America Stadium', coords: [35.2258, -80.8528] },
+          { name: 'Cathedral of Learning', coords: [40.4443, -79.9532] }
+        ]
+      },
+      {
+        lineColor: '#006341',
+        lineText: "Slippery Rock's Marching Pride Band traveled to PPG Paints Arena to play for the mens basketball team City Game versus the Duquesne Dukes.",
+        teams: [
+          { name: 'Slippery Rock University of Pennsylvania', coords: [41.0633, -80.0375] },
+          { name: 'PPG Paints Arena', coords: [40.4396, -79.9893] },
+        ],
+      },
+      {
+        lineColor: '#BA0C2F',
+        lineCoords: [40.442420, -79.969992],
+        lineText: "Duquesne University's Pep Band traveled to the Petersen Events Center to play for the women's Volleyball team NCAA tournament game versus the Michigan Wolverines.",
+        teams: [
+          { name: 'Duquesne University', coords: [40.438026, -79.994026] },
+          { name: 'Petersen Events Center', coords: [40.4438, -79.9623] }
+        ],
+      },
+    ];
+
+    matches.forEach((match) => {
+      match.polyline = L
+        .polyline(
+          match.teams.map((team) => { return team.coords; }),
+          { color: match.lineColor })
+        .bindPopup(
+          L.popup({ autoClose: false, autoPan: false, closeOnClick: false })
+          .setLatLng(match.teams[1].coords).setContent(match.lineText)
+        )
+        .addTo(map);
+
+      match.teams.forEach((team) => {
+        L.marker(team.coords).addTo(map).bindPopup(team.name);
+      });
+    });
+
+    map.fitBounds(matches.map((m) => { return m.teams[1].coords; }));
+
+    matches.forEach((match) => {
+      match.polyline.openPopup(match.lineCoords || match.teams[1].coords);
+    });
+
+		var tilelayer = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png', {
+			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+			subdomains: 'abcd',
+			maxZoom: 19
+		});
+		tilelayer.addTo(map);
+	</script>
+</body>
