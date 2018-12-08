@@ -24,7 +24,7 @@ df <- fread("old-gunviolence.csv")
 
 df$addy <- paste(df$Address, df$`City Or County`, df$State)
 
-api <- "AIzaSyDd_3UfD0qKZYJg81cVCNL39dHf1hIo8mY"
+api <- Sys.getenv("GOOGLE_API_KEY")
 
 locs <- sapply(1:nrow(df), function(i) {
   return(google_geocode(paste(df$addy[i], df$`City Or County`[i], df$State[i]), key = api))
