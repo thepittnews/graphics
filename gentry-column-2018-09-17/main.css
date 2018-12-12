@@ -1,0 +1,27 @@
+.border {
+	fill: #aaaaaa;
+	stroke: #ffffff;
+	stroke-width: 1px;
+}
+
+.CHANGE {
+	width: 60%;
+}
+
+svg {
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 36px;
+}
+
+.svg-container {
+	display: inline-block;
+    position: relative;
+    padding: 0;
+    padding-bottom: 100%;
+    vertical-align: top;
+    overflow: hidden;
+} 
+
+.rainfall {
+	stroke-opacity: 1;
+}
