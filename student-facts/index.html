@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://d3js.org/d3.v5.js"></script>
+	<script src="https://d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
+	<script src="https://pittnews.com/wp-content/uploads/2018/09/responsive.js"></script>
+	<link rel="stylesheet" href="main.css">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+</head>
+<body>
+	<div class="CHANGE">
+	</div>
+	<script>
+		var w=900, h=600, padding=20;
+		var svg=d3.select(".CHANGE")
+			.append("svg")
+			.attr("width",w)
+			.attr("height",h)
+			.call(responsivefy);
+		d3.json(" http://pghgis-pittsburghpa.opendata.arcgis.com/datasets/dbd133a206cc4a3aa915cb28baa60fd4_0.geojson").then(function(data) {
+			console.log(data);
+			var proj = d3.geoMercator().fitSize([w - 2*padding, h - 2*padding], data);
+			var path = d3.geoPath().projection(proj);
+			var g = svg.append("g")
+					.attr("transform", "translate(" + padding + "," + padding + ")")
+					.attr("class", "border-container");
+			g.selectAll("path")
+				.data(data.features)
+				.enter()
+				.append("path")
+				.attr("class", "neighborhood-borders")
+				.attr("d", path);
+			var g = svg.append("g")
+						.attr("transform", "translate(" + padding + "," + padding + ")")
+						.attr("class", "label-container");
+			/*g.selectAll("text")
+				.data(data.features.filter(function(point) {
+					return labeled_hoods.includes(point.properties.hood); 
+				}))
+				.enter()
+				.append("text")
+				.text(function(d) { return d.properties.hood; })
+				.attr("x", function(d) {
+					return proj(d3.geoCentroid(d))[0];
+				})
+				.attr("y", function(d) {
+					return proj(d3.geoCentroid(d))[1];
+				})
+				.attr("class", "neighborhood-label");*/
+		})
+	</script>
+</body>
+</html>

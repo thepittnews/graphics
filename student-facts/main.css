@@ -1,0 +1,11 @@
+.neighborhood-borders {
+	fill: #aaa;
+	stroke: #444;	
+	stroke-width: 0.5px;
+}
+
+.neighborhood-label {
+	text-anchor: middle;
+	alignment-baseline: middle;
+	font-size: 7px;
+}
