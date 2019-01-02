@@ -1,0 +1,132 @@
+<div class="widgetwrap carousel-widget sno-animate  sno-carousel-2 come-in" style="visibility: visible;">
+  <div style="margin: 0px 0px 0px 0px;padding: 10px 9px 0px 9px;overflow: hidden;background-color: #ededed;border-left: 0px solid #ffffff;border-right: 0px solid #ffffff;border-top: 0px solid #ffffff;">
+    <div class="widget4 widgettitle" style="color: #6d6d6d!important;background: #ededed!important;font-size:16px!important;line-height: 28px!important;padding-top:2px !important;text-align:center;">
+      <p style="color: #6d6d6d !important; text-transform: none;">Live Election Updates (as of <span id="live-election-updated-at"></span>)</p>
+    </div>
+  </div>
+  <div class="widgetbody4" style="background-color: #ededed!important;border-right: 0px solid #ffffff !important;border-left: 0px solid #ffffff !important;border-bottom: 0px solid #ffffff !important; padding-top: 0px;">
+    <div id="carousel-2" class="flex-container" style="position: relative; background: unset;">
+      <div id="carouselcarousel-2" class="flexslider" style="margin-bottom: 0px; border: 0px; opacity: 1;">
+        <div class="flex-viewport" style="overflow: hidden; position: relative;">
+          <ul id="live-election-slides" class="slides" style="width: 800%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+          </ul>
+        </div>
+
+        <ul class="flex-direction-nav">
+          <li class="flex-nav-prev">
+            <a class="flex-prev flex-disabled" href="#" tabindex="-1">Previous</a>
+          </li>
+          <li class="flex-nav-next">
+            <a class="flex-next flex-disabled" href="#" tabindex="-1">Next</a>
+          </li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <script type="text/javascript">
+function fetchAndDisplayData() {
+  var $container = $('ul#live-election-slides');
+
+  var dataUrl = 'https://docs.google.com/spreadsheets/d/1LKfcQYRfAdYm3O7zMuypLPaHib17GM-qfZjHwPGCAC4/export?&format=csv';
+  $.get(dataUrl, (res, status, _) => {
+    if (status !== 'success')
+      return;
+
+    $container.html('');
+
+    var data = res.split("\r\n");
+
+    var updatedAt = data.shift().split(",");
+    $('span#live-election-updated-at').html(updatedAt[1]);
+
+    data.filter((d) => { return d.startsWith('H'); })
+      .map((d) => { return data.indexOf(d); })
+      .forEach((startIndex) => {
+        // Row 1: Header
+        var headerData = data[startIndex].split(",");
+
+        // Row 2: Candidate 1
+        var row2 = data[startIndex + 1].split(",");
+
+        // Row 3: Candidate 2
+        var row3 = data[startIndex + 2].split(",");
+
+        // Row 4: "Too close to call" or Subhed
+        var row4 = data[startIndex + 3].split(",");
+
+        var row5 = [];
+        if (data[startIndex + 4] && !data[startIndex + 4].split(",")[0].startsWith('H')) {
+          var row5 = data[startIndex + 4].split(",");
+        }
+
+        // Polls closed text
+        var pollsClosedText = '';
+        if (headerData[2] !== '') {
+          pollsClosedText += `<br/ ><b>(${headerData[2]})</b>`;
+        }
+
+        // Put it all together!
+        var raceHtml = `
+          <li class="carousel-widget-slide" style="width: 195px; margin-right: 20px; float: left; display: block;">
+            <div id="carouseltextcarousel-2" class="carouseltext" style="max-height:50px;min-height:20px; padding-top:10px;">
+              <div class="widgetheadline" style="text-align:center;">
+                <p style="font-size:14px; line-height:17px;" class="homeheadline">
+                <b>${headerData[1]}</b>
+                <br />
+                <b>(${(row5.length > 0) ? row5[1] : row4[1]})</b>
+                ${pollsClosedText}
+                </p>
+              </div>
+            </div>
+            <div style="height:170px;width:100%;overflow:hidden;position:relative;">
+              <span style="width:90%; text-align:center !important; font-size:14px; line-height:17px; border:1px solid rgb(175, 175, 175); padding:10px 10px; padding-left: 10px; text-align:left; display:inline-block; margin-top:7px; margin-bottom:10px; background-color: ${row2[2]}; color: ${row2[3]}">
+                ${row2[0]}: ${row2[1]}
+              </span>
+              <span style="width:90%; text-align:center !important; font-size:14px; line-height:17px; border:1px solid rgb(175, 175, 175); padding:10px 10px; padding-left: 10px; text-align:left; display:inline-block; margin-top:7px; margin-bottom:10px; background-color: ${row3[2]}; color: ${row3[3]}">
+                ${row3[0]}: ${row3[1]}
+              </span>
+        `;
+
+        if (row5.length > 0) {
+          raceHtml += `
+            <span style="width:90%; text-align:center !important; font-size:14px; line-height:17px; border:1px solid rgb(175, 175, 175); padding:10px 10px; padding-left: 10px; text-align:left; display:inline-block; margin-top:7px; margin-bottom:10px; background-color: ${row4[2]}; color: ${row4[3]}">
+              ${row4[0]}: ${row4[1]}
+            </span>
+          `;
+        }
+
+        raceHtml += `</div></li>`;
+
+        $container.append(raceHtml);
+      });
+
+    initCarousel();
+  });
+};
+
+function initCarousel() {
+  $('#carouselcarousel-2').flexslider({
+    animationSpeed: 1000,
+    animationLoop: true,
+    controlNav: false,
+    smoothHeight: false,
+    slideshowSpeed: 10000,
+    slideshow: false,
+    animation: 'slide',
+    itemWidth: 195,
+    itemMargin: 20,
+    minItems: 1,
+    move: 4,
+    maxItems: 5
+  });
+
+  $('.flexslider').animate({ 'opacity': 1 }, { 'duration': 'slow' });
+};
+
+$(document).on('ready', fetchAndDisplayData);
+setInterval(fetchAndDisplayData, 30000);
+		</script>
+    <div class="widget-expander" style="padding-bottom:0px"></div>
+    <div class="clear"></div>
+  </div>
+</div>
