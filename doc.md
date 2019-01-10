@@ -1,5 +1,15 @@
 # Online Visuals Documentation
 
+### Hiring process
+
+1. Confirm eligibility to be hired.
+1. Interview the candidate in the conference room, and if they pass,
+   candidate must sign the ethics form.
+1. Tell candidate they need to see Denise to setup payroll.
+1. Tell candidate about the TPN staff layout/hierarchy.
+1. Confirm with candidate when/what their training piece will be.
+1. Set them up on Slack, and add them to the Staff channel.
+
 ### Publishing process
 
 1. Start a new Git branch in the `pittnews434/graphics` GitHub
