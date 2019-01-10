@@ -4,11 +4,6 @@ library(lubridate)
 library(stringr)
 library(extrafont)
 
-today <- "2018-12-07"
-df <- fread(paste("data-", today, ".csv", sep=""))
-
-df$score <- df$score * df$win
-
 theme_map <- function(...) { # taken from Timo Grossenbacher
   theme_minimal() +
     theme(
@@ -30,6 +25,15 @@ theme_map <- function(...) { # taken from Timo Grossenbacher
     )
 }
 
+today <- "2018-12-07"
+df <- fread(paste("data-", today, ".csv", sep=""))
+
+if (df$score[1] < df$score[2]) {
+  df$score[1] <- -df$score[1]
+} else {
+  df$score[2] <- -df$score[2]
+}
+
 fill_cols <- df$fill
 names(fill_cols) <- df$team
 
@@ -46,8 +50,8 @@ p <- ggplot(df) + geom_bar(aes(x = game, y = score, fill = team), stat = "identi
             family = "Roboto", size = 7) +
   scale_fill_manual(values = fill_cols) +
   scale_colour_manual(values = text_cols) +
-  labs(title = "Projected point totals for sports games",
-       subtitle = "Graphic by Jon Moss | Staff Writer",
+  labs(title = paste("Projected point total for", df$team[1], "vs.", df$team[2], sep=" "),
+       subtitle = "Graphic by Jon Moss | Online Visual Editor",
        caption = "Source: Scores & Stats")
 
 ggsave(paste("odds_", today, ".png", sep = ""), p,
