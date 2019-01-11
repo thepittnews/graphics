@@ -25,7 +25,7 @@ theme_map <- function(...) { # taken from Timo Grossenbacher
     )
 }
 
-today <- "2018-12-07"
+today <- "2019-01-11"
 df <- fread(paste("data-", today, ".csv", sep=""))
 matches <- split.data.frame(df, df$game)
 
@@ -56,7 +56,7 @@ for (idx in 1:length(matches)) {
     scale_colour_manual(values = text_cols) +
     labs(title = paste("Projected point total for", match$team[1], "vs.", match$team[2], sep=" "),
          subtitle = "Graphic by Jon Moss | Online Visual Editor",
-         caption = "Source: Scores & Stats")
+         caption = "Source: OddsShark")
 
   ggsave(paste("odds_", today, "-", idx, ".png", sep = ""), p,
          width = 11, height = 4, dpi = 300)
