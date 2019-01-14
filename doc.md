@@ -5,15 +5,8 @@
 1. Confirm eligibility to be hired.
 1. Interview the candidate in the conference room, and if they pass,
    candidate must sign the ethics form.
-1. Tell candidate they need to see Denise to setup payroll.
 1. Tell candidate about the TPN staff layout/hierarchy.
 1. Confirm with candidate when/what their training piece will be.
-1. Set them up on Slack, and add them to the Staff channel.
-1. Set them up on GitHub, and add them to the `pittnews434`
-   organization.
-
-### Training process
-
 1. Definitions
   - WordPress: Content management system used to power
     [pittnews.com](https://pittnews.com/)
@@ -22,11 +15,13 @@
     graphics
   - [Leaflet](https://leafletjs.com/): JavaScript library used to build
     interactive maps
-1. Walk through how `what-are-the-odds` and `bands-2018-12-10` are laid
-   out.
 1. Review how the assignment process works.
 1. Review how the publishing process works.
+1. Set them up on Slack, and add them to the Staff channel.
+1. Tell candidate they need to see Denise to setup payroll.
 1. Questions or concerns?
+1. Office tour
+
 
 ### Publishing process: writer
 
