@@ -22,6 +22,18 @@
 1. Questions or concerns?
 1. Office tour
 
+### What Are The Odds
+
+1. Get the story from the Sports Desk.
+1. `cd` into `what-are-the-odds`
+1. Create a new file, with the publication date, named `data-YYY-MM-DD.csv`.
+1. Follow the format in the other CSV files for the layout.
+1. Get odds data for the `points` column from [OddsShark](https://www.oddsshark.com/), and team colors for the `fill` column from [Team Color Codes](https://teamcolorcodes.com/).
+1. Install [R](https://wwww.r-project.org) if you have not already.
+1. Run `r -f odds_dep.R` if you haven't already to install dependencies.
+1. Update the `date` variable, and graphic artist credit if necessary, in `odds.R`.
+1. Run `r -f odds.R`, and verify the graphic assets created.
+1. Send the created graphic assets to the Editor.
 
 ### Publishing process: writer
 
