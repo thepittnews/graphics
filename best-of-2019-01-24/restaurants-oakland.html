@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+            integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+            crossorigin=""></script>
+    <script type='text/javascript' src='https://pittnews.com/wp-content/plugins/wp-d3/js/d3.v35.min.js?ver=1.0.0'></script>
+    <style>
+        #map {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wpd3-138711-0"></div>
+    <script>
+    d3.select(".wpd3-138711-0").append("div").attr("id", "map");
+    var map = L.map('map');
+    var restaurants = [
+         { name: "Fuel and Fuddle", coords: [40.44123, -79.95665], category: "Best Late Night Deals", address: "212 Oakland Ave." },
+         { name: "Prince of India", coords: [40.44155, -79.95876], category: "Best Indian Food", address: "3614 Fifth Ave." },
+         { name: "Stack'd", coords: [40.441407, -79.957072], category: "Best Burgers", address: "3716 Forbes Ave." },
+         { name: "Sorrento's", coords: [40.44033, -79.956665], category: "Best Pizza", address: "233 Atwood St." }
+    ];
+        restaurants.forEach(function (restaurant) {
+        L.marker(restaurant.coords)
+            .bindTooltip(`<p><b>${restaurant.name}</b></p> <p>${restaurant.category}</p> <p>${restaurant.address}</p>`)
+            .addTo(map)
+        });
+        map.fitBounds(restaurants.map((r) => { return r.coords; }));
+        map.zoomOut(1);
+    L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+    </script>
+</body>
