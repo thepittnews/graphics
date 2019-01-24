@@ -22,11 +22,10 @@
     d3.select(".wpd3-138711-0").append("div").attr("id", "map");
     var map = L.map('map');
     var restaurants = [
-         { name: "Fuel and Fuddle", coords: [40.44123, -79.95665], category: "Best Late Night Deals", address: "212 Oakland Avenue" },
-         { name: "Prince of India", coords: [40.44155, -79.95876], category: "Best Indian Food", address: "3614 Fifth Avenue" },
-         { name: "Stack'd", coords: [40.441407, -79.957072], category: "Best Burgers", address: "3716 Forbes Avenue" },
-         { name: "Sorrento's", coords: [40.44033, -79.956665], category: "Best Pizza", address: "233 Atwood Street" } ,  
-         //{ name: "Millie's Homemade Ice Cream", coords: [40.457806, -79.92518], category: "Best Ice Cream", address: "232 S. Highland Avenue" }
+         { name: "Fuel and Fuddle", coords: [40.44123, -79.95665], category: "Best Late Night Deals", address: "212 Oakland Ave." },
+         { name: "Prince of India", coords: [40.44155, -79.95876], category: "Best Indian Food", address: "3614 Fifth Ave." },
+         { name: "Stack'd", coords: [40.441407, -79.957072], category: "Best Burgers", address: "3716 Forbes Ave." },
+         { name: "Sorrento's", coords: [40.44033, -79.956665], category: "Best Pizza", address: "233 Atwood St." }
     ];
         restaurants.forEach(function (restaurant) {
         L.marker(restaurant.coords)
