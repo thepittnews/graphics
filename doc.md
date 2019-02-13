@@ -6,6 +6,7 @@
   - [Hiring Process](#hiring-process)
 - Creating graphics
   - [Flourish](#flourish)
+  - [Leaflet](#leaflet)
   - [What Are The Odds](#what-are-the-odds)
 - Day-of production
   - [Publishing process: editor](#publishing-process-editor)
@@ -38,6 +39,10 @@
 
 ### Creating graphics
 
+##### Leaflet
+
+1. Go to 
+
 ##### Flourish
 
 1. Log into `app.flourish.studio` with the TPN credentials.
@@ -52,15 +57,15 @@
 ##### What Are The Odds
 
 1. Get the story from the Sports Desk.
-1. `cd` into `what-are-the-odds`
-1. Create a new file, with the publication date, named `data-YYYY-MM-DD.csv`.
-1. Follow the format in the other CSV files for the layout.
-1. Get odds data for the `points` column from [OddsShark](https://www.oddsshark.com/), and team colors for the `fill` column from [Team Color Codes](https://teamcolorcodes.com/).
+1. If you have not already, download a `.zip` copy of the [`pittnews434/graphics` GitHub repository](https://github.com/pittnews434/graphics).
 1. Install [R](https://wwww.r-project.org) if you have not already.
+1. Change directories into `what-are-the-odds`.
+1. Duplicate an existing `data-*.csv` file, and change the name to include the current publication date: `data-YYYY-MM-DD.csv`.
+1. Update the `name`s, get odds data for the `points` column from [OddsShark](https://www.oddsshark.com/) expected scores, and team colors for the `fill` column from [Team Color Codes](https://teamcolorcodes.com/).
 1. Run `r -f odds_dep.R` if you haven't already to install dependencies.
 1. Update the `date` variable, and graphic artist credit if necessary, in `odds.R`.
-1. Run `r -f odds.R`, and verify the graphic assets created.
-1. Send the created graphic assets to the Editor.
+1. Run `r -f odds.R`, and verify the appropriate images were created.
+1. Send the created images to the Editor.
 
 ### Day-of production
 
