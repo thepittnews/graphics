@@ -1,6 +1,19 @@
 # Online Visuals Documentation
 
-### Hiring process
+### Table of Contents
+
+- Housekeeping
+  - [Hiring Process](#hiring-process)
+- Creating graphics
+  - [What Are The Odds](#what-are-the-odds)
+- Day-of production
+  - [Publishing process: editor](#publishing-process-editor)
+
+---
+
+### Housekeeping
+
+##### Hiring process
 
 1. Confirm eligibility to be hired.
 1. Interview the candidate in the conference room, and if they pass,
@@ -22,11 +35,13 @@
 1. Questions or concerns?
 1. Office tour
 
-### What Are The Odds
+### Creating graphics
+
+##### What Are The Odds
 
 1. Get the story from the Sports Desk.
 1. `cd` into `what-are-the-odds`
-1. Create a new file, with the publication date, named `data-YYY-MM-DD.csv`.
+1. Create a new file, with the publication date, named `data-YYYY-MM-DD.csv`.
 1. Follow the format in the other CSV files for the layout.
 1. Get odds data for the `points` column from [OddsShark](https://www.oddsshark.com/), and team colors for the `fill` column from [Team Color Codes](https://teamcolorcodes.com/).
 1. Install [R](https://wwww.r-project.org) if you have not already.
@@ -35,7 +50,9 @@
 1. Run `r -f odds.R`, and verify the graphic assets created.
 1. Send the created graphic assets to the Editor.
 
-### Publishing process: writer
+### Day-of production
+
+##### Publishing process: writer
 
 1. Start a new Git branch in the `pittnews434/graphics` GitHub
    repository on your computer.
@@ -47,28 +64,38 @@
 1. Editor will alert once graphic is in the "copy" stage, and writer is
    "deadline complete."
 
-### Publishing process: editor
+##### Publishing process: editor
 
-1. Create an "In The Works" Trello card in Today's Stories for each
+**Get it Started:**
+
+- Create an "In The Works" Trello card in Today's Stories for each
    visual, using the prefix `OV: `. Include the graphic on the card, by
 linking to the version live at `pittnews434.herokuapp.com`.
-1. Review visual(s) once writer is ready.
-1. Move to `Pre-read` and post in the editor channel once ready.
-1. Create another "Pre-read" Trello card in Today's Stories, using the
+- Review visual(s) once writer is ready.
+- Move to `Pre-read` and post in the `web18-19` channel once ready for review.
+
+**Time for Cutlines:**
+- Create another "In The Works" Trello card in Today's Stories, using the
    prefix `OV: `, with a Google document containing "cutlines" for each graphic.
    Cutlines should contain a short sentence explaining the graphic,
 followed by a period, and then `Graphic by: First Last | Position.`.
-1. Follow normal editing and copy-editing procedures. Keep in touch with
+- Follow normal editing and copy-editing procedures. Keep in touch with
    the desk editors for the graphic's story.
-1. Once in the "copy" stage, alert the writer that their work is
-   complete.
-1. Once the story is in "GRAPHICS", open the WordPress post editor for the story, and
-   place your cursor where you'd like the graphic to be inserted.
-1. In the content editor toolbar, click the "Wp-D3" button.
-1. Click "New Tab," and paste your JavaScript code into the code editor.
-1. Click "Save" and then "Insert."
-1. Place custom `<head>` content (such as CSS stylesheets or JavaScript
+
+**Postin' Time:**
+
+Once the story is in "send", create a WordPress post for the story, and place your cursor in the editor where you'd like the graphic to be inserted.
+
+- Post the graphic: for HTML-driven graphics
+  - Switch the editor from "Visual" to "Text" mode.
+  - Paste in the HTML code for the graphic.
+- Post the graphic: for JavaScript-driven graphics
+  - In the content editor toolbar, click the "Wp-D3" button.
+  - Click "New Tab," and paste your JavaScript code into the code editor.
+  - Click "Save" and then "Insert."
+- Place custom `<head>` content (such as CSS stylesheets or JavaScript
    includes) into the "Add to head" text area.
-1. Place custom CSS into the "CSS Editor" text area.
-1. Alert the desk editors for the graphic's story that Online Visuals is
+- Place custom CSS into the "CSS Editor" text area.
+- Alert the desk editors for the graphic's story that Online Visuals is
    ready to publish.
+- Once the graphic has been inserted, alert the writer that their work is complete.
