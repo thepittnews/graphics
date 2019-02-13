@@ -4,11 +4,13 @@
 
 - Housekeeping
   - [Hiring Process](#hiring-process)
-- [Day-of production: Creating graphics]
+  - [Payroll]()
+  - [Budgeting]() 
+- [Day-of production: Creating graphics](#day-of-production-creating-graphics)
   - [Flourish](#flourish)
   - [Leaflet](#leaflet)
   - [What Are The Odds](#what-are-the-odds)
-- [Day-of production: Editor publishing process](#publishing-process-editor)
+- [Day-of production: Editor publishing process](#day-of-production-editor-publishing-process)
 
 ---
 
@@ -35,6 +37,20 @@
 1. Tell candidate they need to see Denise to setup payroll.
 1. Questions or concerns?
 1. Office tour
+
+### Payroll
+
+### Budgeting
+
+The Editor must attend the weekly Editorial meeting, and request copies of the budgets for all other desks.
+
+**Budgeting process:**
+
+- Duplicate the budget template, and create a desk budget for the week
+- While reading through the budgets for the other desks, look for stories that can be aided through the use of graphics. Add them to your desk budget.
+- Ensure that there are no more than three nights with graphics budgeted. Rearrange the budget to fit this constraint.
+
+The Editor must also hold a weekly desk meeting, usually held immediately after the weekly Editorial meeting, to give out budget "assignments." Ensure that all graphics have been assigned before the end of the meeting. Writers should work out of the TPN newsroom, and arrive around 7:30 p.m. on production nights.
 
 ### Day-of production: Creating graphics
 
