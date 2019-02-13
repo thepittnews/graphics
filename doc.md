@@ -5,6 +5,7 @@
 - Housekeeping
   - [Hiring Process](#hiring-process)
 - Creating graphics
+  - [Flourish](#flourish)
   - [What Are The Odds](#what-are-the-odds)
 - Day-of production
   - [Publishing process: editor](#publishing-process-editor)
@@ -36,6 +37,17 @@
 1. Office tour
 
 ### Creating graphics
+
+##### Flourish
+
+1. Log into `app.flourish.studio` with the TPN credentials.
+1. Hit "new," and select a type for the graphic
+1. Name the graphic `MM/DD/YY` and then a short description of the graphic.
+1. Click "Data" and enter the data for the graphic.
+1. In the footer dropdown, set the source and add attribution (ex: `Graphic by Jon Moss | Online Visual Editor`) in the "Note" field.
+1. In the header dropdown, set the title.
+1. Hit export and publish in the top right corner.
+1. Send the `public.flourish.studio` link to the Editor.
 
 ##### What Are The Odds
 
@@ -86,13 +98,18 @@ followed by a period, and then `Graphic by: First Last | Position.`.
 
 Once the story is in "send", create a WordPress post for the story, and place your cursor in the editor where you'd like the graphic to be inserted.
 
-- Post the graphic: for HTML-driven graphics
-  - Switch the editor from "Visual" to "Text" mode.
-  - Paste in the HTML code for the graphic.
-- Post the graphic: for JavaScript-driven graphics
-  - In the content editor toolbar, click the "Wp-D3" button.
-  - Click "New Tab," and paste your JavaScript code into the code editor.
-  - Click "Save" and then "Insert."
+- Post the graphic
+  - HTML-driven graphics
+    - Switch the content editor from "Visual" to "Text" mode.
+    - Paste in the HTML code for the graphic.
+  - JavaScript-driven graphics
+    - In the content editor toolbar, click the "Wp-D3" button.
+    - Click "New Tab," and paste your JavaScript code into the code editor.
+    - Click "Save" and then "Insert."
+  - Image-driven graphics
+    - If uploading a "What Are The Odds" graphic, make sure the image width is less than 2,000 pixels. If too big, open the file in Preview, select Tools, select Adjust Size, and make the image 50% of its current size.
+    - In the WordPress UI, click "media" on the left toolbar, and upload the file.
+    - Put the cutline in the caption field, and put the attribution (ex: `Graphic by Jon Moss | Online Visual Editor`) in the photographer field.
 - Place custom `<head>` content (such as CSS stylesheets or JavaScript
    includes) into the "Add to head" text area.
 - Place custom CSS into the "CSS Editor" text area.
