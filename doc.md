@@ -5,7 +5,7 @@
 - Housekeeping
   - [Hiring Process](#hiring-process)
   - [Payroll]()
-  - [Budgeting]() 
+  - [Budgeting](#budgeting) 
 - [Day-of production: Creating graphics](#day-of-production-creating-graphics)
   - [Flourish](#flourish)
   - [Leaflet](#leaflet)
