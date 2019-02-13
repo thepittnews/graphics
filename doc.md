@@ -4,12 +4,11 @@
 
 - Housekeeping
   - [Hiring Process](#hiring-process)
-- Creating graphics
+- [Day-of production: Creating graphics]
   - [Flourish](#flourish)
   - [Leaflet](#leaflet)
   - [What Are The Odds](#what-are-the-odds)
-- Day-of production
-  - [Publishing process: editor](#publishing-process-editor)
+- [Day-of production: Editor publishing process](#publishing-process-editor)
 
 ---
 
@@ -37,7 +36,7 @@
 1. Questions or concerns?
 1. Office tour
 
-### Creating graphics
+### Day-of production: Creating graphics
 
 ##### Leaflet
 
@@ -67,21 +66,7 @@
 1. Run `r -f odds.R`, and verify the appropriate images were created.
 1. Send the created images to the Editor.
 
-### Day-of production
-
-##### Publishing process: writer
-
-1. Start a new Git branch in the `pittnews434/graphics` GitHub
-   repository on your computer.
-1. Create a new folder for your project, and then create the graphic.
-1. Commit and push the branch to Github, and open up a Pull Request for
-   your branch.
-1. Alert the editor that the project is now ready for review.
-1. Have editing comments back and forth with the editor.
-1. Editor will alert once graphic is in the "copy" stage, and writer is
-   "deadline complete."
-
-##### Publishing process: editor
+### Day-of production: Editor publishing process
 
 **Get it Started:**
 
@@ -121,3 +106,17 @@ Once the story is in "send", create a WordPress post for the story, and place yo
 - Alert the desk editors for the graphic's story that Online Visuals is
    ready to publish.
 - Once the graphic has been inserted, alert the writer that their work is complete.
+
+---
+
+##### Publishing process: writer
+
+1. Start a new Git branch in the `pittnews434/graphics` GitHub
+   repository on your computer.
+1. Create a new folder for your project, and then create the graphic.
+1. Commit and push the branch to Github, and open up a Pull Request for
+   your branch.
+1. Alert the editor that the project is now ready for review.
+1. Have editing comments back and forth with the editor.
+1. Editor will alert once graphic is in the "copy" stage, and writer is
+   "deadline complete."
