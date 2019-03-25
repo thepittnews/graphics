@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,900|Oswald:300,400|Slabo+27px" rel="stylesheet">
+    <title>Vladimir Padunov: Catch him outside the Cathedral</title>
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no">
+
+    <style>
+      body { overflow-x: hidden; }
+
+      /* ** TITLES and HEADER ** */
+      #story-title, #header-title {
+        font-weight: 900;
+        font-family: 'Merriweather', serif;
+        color: white;
+      }
+
+      #story-title {
+        background-color: rgba(0, 0, 0, 0);
+        height: 0px;
+        position: relative;
+        top: -250px;
+        left: 100px;
+        font-size: 50px;
+        max-width: 80%;
+        display: block;
+      }
+
+      #header-title {
+        margin-left: auto;
+        margin-right: auto;
+        float: right;
+        padding-right: 20px;
+        opacity: 0;
+        transition: all 1s linear;
+      }
+
+      .show-title {
+        opacity: 1 !important;
+        transition: all 1s linear;
+      }
+
+      nav {
+        background-color: #212121 !important;
+        opacity: 0.8;
+      }
+
+      .brand-logo {
+        height: 40px;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+
+      #author-info, #date-info {
+        font-family: 'Oswald', sans-serif;
+        font-size: 20px;
+      }
+
+      #date-info {
+        font-weight: 300;
+        font-size: 18px;
+      }
+
+      @media(max-width: 993px) {
+        #header-title {
+          display: none;
+        }
+
+        #story-title {
+          top: -400px !important;
+          left: 50px !important;
+          font-size: 35px !important;
+        }
+      }
+
+      /* ** QUOTES ** */
+      .quote {
+        position: relative;
+        right: -1000px;
+      }
+
+      #first-quote {
+        top: 1000px;
+      }
+
+      #second-quote {
+        top: 1200px;
+      }
+
+      #third-quote {
+        top: 2000px;
+      }
+
+      .show-quote {
+        right: 0px !important;
+        transition: right 1s ease-out, border-left 2s ease-in;
+        border-left: 5px solid #5ca0c3 !important;
+      }
+
+      blockquote {
+        font-family: 'Merriweather', serif;
+        font-weight: 900;
+        border-left: 5px solid white;
+      }
+
+      .inline-quote { display: none; }
+
+      @media(min-width: 601px) {
+        .inline-quote { display: none !important; }
+      }
+
+      @media(max-width: 600px) {
+        .inline-quote {
+          border-left: 5px solid #5ca0c3 !important;
+          display: block !important;
+        }
+        #first-quote, #second-quote, #third-quote {
+          display: none !important;
+        }
+      }
+
+      /* ** GENERAL CSS ** */
+      .container a:hover {
+        background-color: aliceblue;
+        transition: background-color .5s linear;
+      }
+
+      p {
+        font-family: 'Merriweather', serif;
+        font-weight: 300;
+      }
+
+      p:first-child:first-letter {
+        float: left;
+        font-size: 75px;
+        line-height: 60px;
+        padding-top: 4px;
+        padding-right: 8px;
+        padding-left: 3px;
+      }
+
+      @media(min-width: 994px) {
+        p { font-size: 15px !important; }
+      }
+
+      div.parallax-container { height: 70vh; }
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          &nbsp;
+          <a href="https://pittnews.com"><img class="brand-logo" src="https://pittnews.com/wp-content/uploads/2018/03/TPN-VECTOR-BLUE-small.png" /></a>
+          <span id="header-title"> Vladimir Padunov: Catch him outside the Cathedral </span>
+        </div>
+      </nav>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax">
+        <img src="https://pittnews.com/wp-content/uploads/2018/03/Vladimir.jpg" />
+      </div>
+    </div>
+
+    <div class="section white">
+      <h4 id="story-title" style="background-color:rgba(0,255,0,0);">Vladimir Padunov: Catch him outside the Cathedral</h4>
+
+      <div class="container">
+        <span id="author-info">Written by Janine Faust</span>
+        <br/>
+        <span id="author-info">Photos by Christian Snyder</span>
+        <br/>
+        <span id="date-info">April 5, 2018</span>
+        <br/>
+
+        <div class="row">
+          <div class="col s12 m8">
+            <p><span style="font-weight: 400;">Vladimir “Volodia” Padunov’s office looks like a curiosity shop.</span></p>
+            <p><span style="font-weight: 400;">A tiara, rattlesnake eggs and other trinkets line the shelves. Cluttered beneath are rolls of film. Hats from the former Soviet Union dangle from the ceiling. A jar of homemade horseradish vodka sits on his desk.  </span></p>
+            <p><span style="font-weight: 400;">The professor himself looks like a caricature, with a direct gaze, lean frame and thinning white hair. He insists on being referred to as “Volodia,” whether that be by students or the Chancellor.</span></p>
+            <p><span style="font-weight: 400;">Students may know him as the man wearing a brightly colored coat who often smokes on the Cathedral of Learning patio — which he does 10 minutes to the hour, nearly every hour. </span></p>
+            <p><span style="font-weight: 400;">“Why do I do it? I get a fashion show. I get a street ballet, because there&#8217;s hundreds of people, but they’re moving around so beautifully without touching each other,” he said. “And I get a street symphony.”</span></p>
+            <p><span style="font-weight: 400;">His coats, called chapans, come in a variety of eye-catching colors and are common in Central Asia. Padunov started wearing them after he traveled there to serve on a film festival jury in the late ‘90s. </span></p>
+            <p><span style="font-weight: 400;">Padunov said he wears chapans, and owns items such as an early 20th century lighter, because he doesn’t want to be like everyone else. </span></p>
+            <p><span style="font-weight: 400;">“I’m a Russian in America and an American in Russia,” he said. “So I don’t try to pass.”</span></p>
+            <p><span style="font-weight: 400;">The Russian-American has been working at Pitt for nearly 20 years as an associate professor in the Slavic languages and literature department and the film studies program. He founded Pitt’s internationally renowned Russian film symposium in 1999, which screens new Russian films and features scholars in film and Slavic studies every spring.</span></p>
+            <p><span style="font-weight: 400;">Many of the scholars Padunov invites to the symposium come from Russia — the country he could have grown up in. He was born in Germany in 1949 in a displaced persons camp. These camps were created by the Allies after World War II to hold refugees, including slave labor camp survivors like Padunov’s Ukrainian mother and prisoners of war like his Russian father. Most people in these camps were returned to their countries of origin, but some, like Padunov’s parents, did not go back due to shifting borders or fear of being perceived as collaborating with Allied forces. </span></p>
+            <p><span style="font-weight: 400;">Padunov has no memory of the camp. He and his parents were put on a boat heading to America when he was five.</span></p>
+            <p><span style="font-weight: 400;">During the voyage, Padunov’s parents were divorced by the ship’s captain. He and his mother ended up in New York City on the Lower East Side — he would only see his father every few years after that.</span></p>
+            <p><span style="font-weight: 400;">His childhood was difficult. There were no services or aid available to immigrants then, and at first, he did not speak English well. His mother was never able to pick it up.</span></p>
+            <p><span style="font-weight: 400;">“There were nights when we went without dinner,” he said. “My bed was the Sunday New York Times. The paper is thick so if you put a bunch of them together you have a mattress you can put a sheet on, and then sleep on it.” </span></p>
+            <p><span style="font-weight: 400;">Padunov didn’t get to watch his first movie until he was 13. A babysitter took him to see Alfred Hitchcock’s “Psycho,” and he was immediately hooked.</span></p>
+            <p><span style="font-weight: 400;">“I was amazed that you could do in 2-D what my day-to-day life was like in 3-D,” he said. “It was incredible.”</span></p>
+            <p><span style="font-weight: 400;">Padunov began watching four to six movies a week after that. He went not only because of his fascination with film but also for the smell of smoke.</span></p>
+            <p><span style="font-weight: 400;">“In the movie theater, everyone was smoking, and the whole hall was filled with smoke. And I think that&#8217;s when my love of smoking began,” he said. </span></p>
+            <p><span style="font-weight: 400;">He managed to resist doing it himself until he was 13, when local bullies pressured him to accept a cigarette. He’s been smoking devotedly ever since.</span></p>
+            <p><span style="font-weight: 400;">Padunov, who loved reading as a child and would sneak into clubs in</span> <span style="font-weight: 400;">the East Village to listen to jazz, was considered mentally delayed in school because English was not his first language. He was able to get into more challenging classes after his English improved and was accepted into Stuyvesant High School in 1962.</span></p>
+            <p class="flow-text">
+              <blockquote class="inline-quote">
+                “There were nights when we went without dinner,” he said. “My bed was the Sunday New York Times. The paper is thick so if you put a bunch of them together you have a mattress you can put a sheet on, and then sleep on it.”
+              </blockquote>
+            </p>
+          </div>
+
+          <div class="col m4 hide-on-small-only">
+            <blockquote class="quote" id="first-quote">
+              “There were nights when we went without dinner,” he said. “My bed was the Sunday New York Times. The paper is thick so if you put a bunch of them together you have a mattress you can put a sheet on, and then sleep on it.”
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax">
+        <img src="https://pittnews.com/wp-content/uploads/2019/03/IMG_0084.jpg" />
+      </div>
+    </div>
+
+    <p style="float: right"><i>Vladimir Padunov in his Cathedral office.</i></p>
+
+    <div class="section white">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m8">
+            <p><span style="font-weight: 400;">Padunov went on to study at Brooklyn College, where he witnessed student protests against the Vietnam War. He viewed the demonstrations as anti-American.</span></p>
+            <p><span style="font-weight: 400;">“I’m a first generation emigre. I was conservative, I wanted to be Americanized,” he said. “I wanted to forget everything to do with my native origins.” </span></p>
+            <p><span style="font-weight: 400;">But Padunov’s views changed in 1968 when he received his draft notice the same day he earned his B.A. He was sent to Thailand to serve as a senior administrative specialist, removing soldiers from the field and reassigning or discharging them. </span></p>
+            <p><span style="font-weight: 400;">It’s not a time he likes talking about.</span></p>
+            <p><span style="font-weight: 400;">After returning to the United States for a few days, Padunov fled to Europe, vowing to never return to America. But during the early 70s, he bounced between Europe and the United States, earning his doctorate in Comparative Literature at Cornell and having his first experiences teaching Eastern European studies and film. </span></p>
+            <p><span style="font-weight: 400;">“For me there&#8217;s no difference between teaching a novel and teaching a film,” he said. “It’s just that one is written with words, [and] one is enacted in images.”   </span></p>
+            <p><span style="font-weight: 400;">Padunov eventually landed at Hunter College in New York in 1977, where he taught Russian. Inspired by some of his students — Soviet Union immigrants who spoke better Russian than he did —  he applied for a grant to study the language more intensely in Moscow in the summer of 1984. </span></p>
+            <p><span style="font-weight: 400;">While there, Padunov — at this point having been married and divorced three times — met professor Nancy Condee, who would join him for smoke breaks.</span></p>
+            <p><span style="font-weight: 400;">Condee, Pitt’s current director of the Center for Russian and East European Studies, has been married to Padunov for more than 30 years. </span></p>
+            <p><span style="font-weight: 400;">“He’s a contrarian. He likes to decide spur-of-the-moment what he’s going to do. If it’s at odds with someone else, even better,” Condee said. </span></p>
+            <p><span style="font-weight: 400;">When the two returned to the United States, they were both at different colleges. After they married in the early ‘80s, they received grants to teach in Moscow , where they had their first child. </span></p>
+            <p><span style="font-weight: 400;">Padunov said being in the Soviet Union influenced him to teach more contemporary works because he was able to meet the creators of films and plays he attended. </span></p>
+            <p><span style="font-weight: 400;">“It’s nice to get drunk with people you’re studying, rather than reading crap sitting in dusty archives,” he said.</span></p>
+            <p><span style="font-weight: 400;">When their time in Moscow was up, Padunov and Condee returned to the United States in the mid ‘80s. Pitt’s Slavic Department approached the couple with job offers in 1988.</span></p>
+            <p><span style="font-weight: 400;">Stanford also offered them positions at the time. But Padunov said one of the reasons they settled on Pitt was because Stanford had certain policies that didn’t allow smoking near the university-owned houses.</span></p>
+            <p><span style="font-weight: 400;">Padunov likes being at Pitt, although he misses teaching comparative literature. But he still enjoys being able to teach about the world through film.</span></p>
+            <p><span style="font-weight: 400;">“The greater number of angles that you learn to look at the world from, the more interesting the world becomes and the more interesting you become,” he said. </span></p>
+            <p><span style="font-weight: 400;">He gets creative to keep people’s attention in his classes, employing techniques such as raising his voice unexpectedly, using obscenities and “getting in people’s faces.”</span></p>
+            <p><span style="font-weight: 400;">In an Intro to Film class one evening in March, Padunov keeps a discussion about queer cinema going — pacing around the front of the room with his hands stuffed in his pockets — as he rebutts or elaborates on answers his students offer up to his questions. </span></p>
+            <p><span style="font-weight: 400;">Students raise five fingers if they have an answer, two fingers to respond to a comment.</span></p>
+            <p><span style="font-weight: 400;">“Why are musicals as a category considered queer cinema?” Padunov asks.</span></p>
+            <p><span style="font-weight: 400;">A student raises five fingers. “I have an idea, but it might be wrong,” he says.</span></p>
+            <p><span style="font-weight: 400;">“Who cares?” Padunov replies.</span></p>
+            <p><span style="font-weight: 400;">Sophomore computer science major Michael Neuman said Intro to Film is one of his favorite classes because Padunov is interested in hearing students’ opinions.</span></p>
+            <p><span style="font-weight: 400;">“He’s very blunt and unmitigated, which I like,” Neuman said. “He has personality as a teacher.”</span></p>
+            <p><span style="font-weight: 400;">Padunov still watches films frequently in his spare time, often for the festivals for which he serves on juries in Eastern Europe. Sometimes, on his way home from work, he will stop in a theater and buy a ticket for whatever is playing next. He refuses to name a favorite film, though.</span></p>
+            <p><span style="font-weight: 400;">“Why don’t you ask me which one of my children I love more?” he said. “I’m a slut, I’ll watch anything.” </span></p>
+          </div>
+
+          <div class="col m4">
+            <blockquote class="quote" id="second-quote">
+              “The greater number of angles that you learn to look at the world from, the more interesting the world becomes and the more interesting you become,” he said.
+            </blockquote>
+            <!--<blockquote id="third-quote">-->
+              <!--"As soon as I walked in, they pretty much told me, ‘Your problems are too much for what we can supply you with,’” Sternberg said. “I wish they kind of set things in a way that was more like, ‘We’re going to help you as long as we can. We’re going to help you every step along the way.’”-->
+            <!--</blockquote>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.parallax-container:eq(0)').css('height', '100vh');
+      $('.parallax').parallax();
+    });
+
+    $(window).scroll(function() {
+      const scrollTop = $(window).scrollTop();
+      if (scrollTop > 300) {
+        $("#header-title").addClass('show-title');
+      } else {
+        $('#header-title').removeClass('show-title');
+      }
+
+      $("blockquote[class!='inline-quote']").each((idx, el) => {
+        var $el = $(el);
+        if (scrollTop > $el.offset().top - 600) {
+          $el.addClass('show-quote');
+        }
+      });
+    });
+  </script>
+</html>
