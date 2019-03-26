@@ -24,32 +24,68 @@
     var locations = [
       {
         name: 'City-County Building',
-        coords: [40.438685, -79.997249]
+        coords: [40.438685, -79.997249],
+        icon: 'green'
       },
-        {
+      {
         name: 'Grant Street and Liberty Avenue',
-        coords: [40.443867, -79.993838]
+        coords: [40.443867, -79.993838],
+        icon: 'purple'
       },
       {
         name: 'Wood Street and Liberty Avenue',
-        coords: [40.4423931, -79.9988977]
+        coords: [40.4423931, -79.9988977],
+        icon: 'purple'
       },
       {
         name: 'Wood Street and Boulevard of the Allies',
-        coords: [40.438436, -80.001941]
+        coords: [40.438436, -80.001941],
+        icon: 'purple'
       },
       {
         name: 'Allegheny County Jail',
-        coords: [40.435140, -79.993486]
+        coords: [40.435140, -79.993486],
+        icon: 'purple'
       },
       {
         name: 'Grant Street and Boulevard of the Allies',
-        coords: [40.437072, -79.998350]
+        coords: [40.437072, -79.998350],
+        icon: 'red'
       }
     ];
 
+    var icons = {
+      purple: L.Icon.extend({
+        options: {
+          iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
+          iconSize: [25, 41],
+          iconAnchor: [12, 41],
+          popupAnchor: [1, -34],
+          shadowSize: [41, 41]
+        }
+      }),
+      red: L.Icon.extend({
+        options: {
+          iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+          iconSize: [25, 41],
+          iconAnchor: [12, 41],
+          popupAnchor: [1, -34],
+          shadowSize: [41, 41]
+        }
+      }),
+      green: L.Icon.extend({
+        options: {
+          iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+          iconSize: [25, 41],
+          iconAnchor: [12, 41],
+          popupAnchor: [1, -34],
+          shadowSize: [41, 41]
+        }
+      })
+    };
+
     locations.forEach((location) => {
-      L.marker(location.coords).addTo(map).bindTooltip(`<h3>${location.name}</h3>`);
+      L.marker(location.coords, { icon: new icons[location.icon]() }).addTo(map).bindTooltip(`<h3>${location.name}</h3>`);
     });
 
     for(var i = 0; i < locations.length - 1; i++) {
