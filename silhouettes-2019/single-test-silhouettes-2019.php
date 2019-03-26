@@ -131,7 +131,7 @@ $combined_writer = $writer[0] . " " . $writer[1];
       }
 
       div.parallax-container { height: 80vh; }
-      .aligncenter { text-align: center; }
+      .aligncenter { margin: 0 auto; }
       .wp-caption-text { font-style: italic; }
 
       /* ** MEDIA ** */
