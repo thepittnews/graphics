@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+   crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+  <script type='text/javascript' src='https://pittnews.com/wp-content/plugins/wp-d3/js/d3.v35.min.js?ver=1.0.0'></script>
+  <style>
+    #map {
+      width: 100%;
+      height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+	<div class="wpd3-138711-0"></div>
+	<script>
+    d3.select(".wpd3-138711-0").append("div").attr("id", "map");
+		var map = L.map('map');
+
+    var locations = [
+      {
+        name: 'City-County Building',
+        coords: [40.438685, -79.997249]
+      },
+        {
+        name: 'Grant Street and Liberty avenue',
+        coords: [40.443867, -79.993838]
+      },
+      {
+        name: 'Wood street and Liberty avenue',
+        coords: [40.4423931, -79.9988977]
+      },
+      {
+        name: 'Wood street and Boulevard of the Allies',
+        coords: [40.438436, -80.001941]
+      },
+      {
+        name: 'Allegheny County Jail',
+        coords: [40.435140, -79.993486]
+      },
+      {
+        name: 'Grant street and Boulevard of the Allies',
+        coords: [40.437072, -79.998350]
+      }
+    ];
+
+    locations.forEach((location) => {
+      L.marker(location.coords).addTo(map).bindTooltip(`<h3>${location.name}</h3>`);
+    });
+
+    for(var i = 0; i < locations.length - 1; i++) {
+      L.polyline([locations[i].coords, locations[i + 1].coords], { color: 'blue' }).addTo(map);
+    }
+
+    map.fitBounds(locations.map((location) => { return location.coords; }));
+
+		var tilelayer = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png', {
+			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+			subdomains: 'abcd',
+			maxZoom: 19
+		});
+		tilelayer.addTo(map);
+	</script>
+</body>
