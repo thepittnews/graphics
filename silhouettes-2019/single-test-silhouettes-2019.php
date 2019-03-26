@@ -85,11 +85,6 @@ $combined_writer = $writer[0] . " " . $writer[1];
       }
 
       /* ** QUOTES ** */
-      .quote {
-        position: relative;
-        right: -1000px;
-      }
-
       .show-quote {
         right: 0px !important;
         transition: right 1s ease-out, border-left 2s ease-in;
@@ -100,9 +95,13 @@ $combined_writer = $writer[0] . " " . $writer[1];
         font-family: 'Merriweather', serif;
         font-weight: 900;
         border-left: 5px solid white;
-      }
 
-      .inline-quote { display: none; }
+        float: right;
+        max-width: 250px;
+        font-weight: bold;
+        padding: 13px;
+        margin: 0 13px 13px 0;
+      }
 
       /* ** GENERAL CSS ** */
       .container a:hover {
@@ -150,16 +149,12 @@ $combined_writer = $writer[0] . " " . $writer[1];
         }
       }
 
-      @media(min-width: 601px) {
-        .inline-quote { display: none !important; }
+      .inline-quote {
+        border-left: 5px solid #5ca0c3 !important;
+        display: block !important;
       }
 
       @media(max-width: 600px) {
-        .inline-quote {
-          border-left: 5px solid #5ca0c3 !important;
-          display: block !important;
-        }
-
         #story-title { top: -225px !important; }
       }
     </style>
@@ -191,49 +186,14 @@ $combined_writer = $writer[0] . " " . $writer[1];
     <div class="section white">
       <div class="container">
         <div class="row">
-          <div class="col s12 m8">
-<?php
-$content = wpautop(get_the_content());
-$content = do_shortcode($content);
-
-/* Remove image width/height attributes */
-/*$imageWidthHeightPattern = '/(width|height)="\d*"\s/';
-if (preg_match($imageWidthHeightPattern, $content)) {
-  $replacement = "";
-  $content = preg_replace($imageWidthHeightPattern, $replacement, $content);
-}
-
-$imagesWithCutlinesPattern = '/(<img([^>]*)>)(<p.*class="wp-caption-text">(.+?)<\/p><\/div><\/p>)/i';
-$imagesWithNoCutlinesPattern = '/(<img([^>]*)>)/i';
-
-if (preg_match($imagesWithCutlinesPattern, $content)) {
-  $replacement = '
-    </div></div>
-    <div class="col m4 hide-on-small-only"></div></div>
-    </div></div></div>
-    <div class="parallax-container"><div class="parallax">$1</div></div>
-    <p style="float: right"><i>$4</i></p>
-    <div class="section white"><div class="container"><div class="row"><div class="col s12 m8">';
-  $content = preg_replace($imagesWithCutlinesPattern, $replacement, $content);
-} elseif (preg_match($imagesWithNoCutlinesPattern, $content)) {
-  $replacement = '
-    </div></div>
-    <div class="col m4 hide-on-small-only"></div></div>
-    </div></div></div>
-    <div class="parallax-container"><div class="parallax">$1</div></div>
-    <div class="section white"><div class="container"><div class="row"><div class="col s12 m8">';
-  $content = preg_replace($imagesWithNoCutlinesPattern, $replacement, $content);
-}*/
-
-echo $content;
-?>
+          <div class="col s12 m11">
+            <?php echo do_shortcode(wpautop(get_the_content())); ?>
             <div class="card card-small blue-grey darken-1">
               <div class="card-content white-text">
                 <a style="text-decoration: underline; font-weight: 900; font-family: 'Merriweather', serif; color: white; font-size: 24px;" href="https://pittnews.com/silhouettes/">Read more silhouettes from The Pitt News</a>
               </div>
             </div>
           </div>
-          <div class="col m4 hide-on-small-only"></div>
         </div>
       </div>
     </div>
@@ -250,7 +210,6 @@ echo $content;
         const blockquoteColumn = $el.parent().siblings()[0];
 
         $el.html(elText);
-        $(blockquoteColumn).append(`<blockquote style="position: relative; ${elStyle}">${elText}</blockquote>`);
       });
     });
 
