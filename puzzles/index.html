@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<head>
+  <link href="style-static.css" type="text/css" rel="stylesheet" />
+  <link href="style-compiled.css" type="text/css" rel="stylesheet" />
+  <script>
+    const puzzle = [
+      [ 's', 'h', 'r', 'o', 'u', 'd', null, null, 'e', null, 'l', null, 'f' ], //1
+      ['l', null, null, 'r', null, 'a', 'd', 'a', 'm', 's', 'a', 'l', 'e'],//2
+      ['i', null, 's', 'a', 'r', 'i', null, null, 'e', null, 't', null, 'i'], //3
+      ['g', 'r', 'a', 't', 'i', 's', null, 'o', 'r', 'p', 'h', 'a', 'n'], //4
+      ['h', null, 'n', 'o', 'd', null, 'f', null, 'a', 'l', 'e', 'r', 't'], //5
+      ['t', 'i', 'e', 'r', null, 'j', 'e', 'l', 'l', 'y', null, 'e', null], //6
+      [null, 'n', null, null, 'd', 'a', 't', 'e', 'd', null, null, 'a', null], //7
+      [null, 'a', null, 'h', 'a', 'b', 'i', 't', null, 'v', 'e', 's', 't'], //8
+      ['i', 'n', 'f', 'u', 'n', null, 'd', null, 'b', 'i', 'd', null, 'w'], //9
+      ['s', 'e', 'l', 'e', 'c', 't', null, 'n', 'e', 'g', 'a', 't', 'e'], //10
+      ['l', null, 'o', null, 'e', null, null, 'a', 't', 'o', 'm', null, 'l'], //11
+      ['a', 'c', 'c', 'u', 'r', 'a', 'c', 'y', null, 'u', null, null, 'v'], //12
+      ['m', null, 'k', null, 's', null, null, 's', 'o', 'r', 't', 'i', 'e'], //13
+    ];
+
+    const clues = {
+      Across: [
+        {number: "1", text: "Cover (6)", labelColumn: 1, highlightColumn: `3/7`},
+        {number: "7", text: "Water (5,3)", labelColumn: 6, labelRow: 2, highlightColumn: `6/14`, highlightRow: 2},
+        {number: "8", text: "Indian Dress (4)", labelColumn: 3, labelRow: 3, hightlightColumn: `3/7`, highlightRow: 3},
+        {number: "10", text: "Without payment (6)", labelColumn: 1, labelRow: 4, highlightColumn: `1/7`, highlightRow: 4},
+        {number: "11", text: "Parentless child (6)", labelColumn: 8, labelRow: 4, highlightColumn: `8/14`, highlightRow: 4},
+        {number: "14", text: "Signal agreement (3)", labelColumn: 3, labelRow: 5, highlightColumn: `3/6`, highlightRow: 5},
+        {number: "16", text: "Vigilant (5)", labelColumn: 9, labelRow: 5, highlightColumn: `9/14`, highlightRow: 5},
+        {number: "17", text: "Row (4)", labelColumn: 1, labelRow: 6, highlightColumn: `1/5`, highlightColumn: 6},
+        {number: "19", text: "Wobbly dessert (5)", highlightColumn: `6/11`, highlightRow: 6},
+        {number: "21", text: "Unfashionable (5)", highlightColumn: `5/10`, highlightRow: 7},
+        {number: "22", text: "Nun's outfit (5)", highlightColumn: `4/9`, highlightRow: 8},
+        {number: "23", text: "Singlet (4)", highlightColumn: `10/14`, highlightRow: 8},
+        {number: "26", text: "As a joke (2,3)", highlightRow: `1/6`, highlightRow: 9},
+        {number: "28", text: "Offer (3)", highlightColumn: `9/12`, highlightRow: 9},
+        {number: "29", text: "Choose (6)", labelColumn: 1, labelRow: 10, highlightColumn: `1/7`, highlightRow: 10},
+        {number: "30", text: "Nullify (6)", labelColumn: 8, labelRow: 10, highlightColumn: `8/14`, highlightRow: 10},
+        {number: "31", text: "Particle of matter (4)", labelColumn: 8, labelRow: 11, highlightColumn: `8/12`, highlightRow: 11},
+        {number: "32", text: "Precision (8)", labelColumn: 1, labelRow: 12, highlightColumn: `1/9`, highlightRow: 12},
+        {number: "33", text: "A sally (6)", labelColumn: 8, labelRow: 13, highlightColumn: `8/14`, highlightRow: 13}
+      ],
+      Down: [
+        {number: '1', text: 'Slim (6)'},
+        {number: "2", text: "Public speaker (6)", labelColumn: 4},
+        {number: "3", text: "Podium (4)", labelColumn: 6},
+        {number: "4", text: "Gemstone (7)", labelColumn: 9},
+        {number: "5", text: "Turning tool (5)", labelColumn: 11},
+        {number: "6", text: "Mock attack (5)", labelColumn: 13},
+        {number: "8", text: "Sound of mind (4)"},
+        {number: "9", text: "To free (3)", labelColumn: 5, labelRow: 3},
+        {number: "12", text: "Fold (3)", labelColumn: 10, labelRow: 4},
+        {number: "13", text: "Regions (5)", labelColumn: 12, labelRow: 4},
+        {number: "15", text: "Stinking (5)", labelColumn: 7, labelRow: 5},
+        {number: "18", text: "Senseless (5)", labelColumn: 2, labelRow: 6},
+        {number: "19", text: "Quick short punch (3)", labelColumn: 6, labelRow: 6},
+        {number: "20", text: "Permit (3)", labelColumn: 8, labelRow: 6},
+        {number: "21", text: "Ballerinas (7)", labelColumn: 5, labelRow: 7},
+        {number: "22", text: "Shade (3)", labelColumn: 4, labelRow: 8},
+        {number: "23", text: "Vitality (6)", labelColumn: 10, labelRow: 8},
+        {number: "24", text: "Dutch cheese (4)", labelColumn: 11, labelRow: 8},
+        {number: "25", text: "Dozen (6)", labelColumn: 13, labelRow: 8},
+        {number: "26", text: "Muslim religion (5)", labelColumn: 1, labelRow: 9},
+        {number: "27", text: "Group of sheep (5)", labelColumn: 3, labelRow: 9},
+        {number: "28", text: "Wager (3)", labelColumn: 9, labelRow: 9},
+        {number: "30", text: "No votes (4)"}
+      ]
+    };
+
+    const insertAfterBegin = (container, content) => {
+      document.getElementsByClassName(container)[0]
+        .insertAdjacentHTML('afterbegin', content);
+    };
+
+    window.onload = () => {
+      // Load puzzle content
+      var serializedPuzzle = [];
+      for(var rowNumber = 0; rowNumber < puzzle.length; rowNumber++) {
+        for(var columnNumber = 0; columnNumber < puzzle[rowNumber].length; columnNumber++) {
+          const item = puzzle[rowNumber][columnNumber];
+          const itemId = `item${rowNumber + 1}-${columnNumber + 1}`;
+
+          if (item === null) {
+            serializedPuzzle.push(`<span class="crossword-board__item--blank" id="${itemId}"></span>`);
+          } else {
+            serializedPuzzle.push(`<input id="${itemId}" class="crossword-board__item" type="text" minlength="1" maxlength="1" pattern="^[${item}${item.toUpperCase()}]{1}$" required="required" value="" />`);
+          }
+        }
+      }
+      insertAfterBegin('crossword-board-for-real', serializedPuzzle.join(''));
+
+      // Load puzzle clues
+      const styleEl = document.createElement('style');
+      document.head.appendChild(styleEl);
+      const styleSheet = styleEl.sheet;
+
+      for(var key in clues) {
+        const keyLower = key.toLowerCase();
+        var serializedClueLabels = [];
+        var serializedClues = [`<dt class="crossword-clues__list-title">${key}</dt>`];
+
+        clues[key].forEach((clue) => {
+          serializedClues.push(`<dd class="crossword-clues__list-item crossword-clues__list-item--${keyLower}-${clue.number}" data-number="${clue.number}">${clue.text}</dd>`);
+          serializedClueLabels.push(`<span id="${keyLower}-${clue.number}" class="crossword-board__item-highlight crossword-board__item-highlight--${keyLower}-${clue.number}"></span>`);
+
+          var labelStyleString = '';
+          if (clue.labelColumn >= 1) {
+            labelStyleString += `grid-column: ${clue.labelColumn}/${clue.labelColumn};`;
+          }
+          if (clue.labelRow > 1) {
+            labelStyleString += `grid-row: ${clue.labelRow}/${clue.labelRow};`;
+          }
+          styleSheet.insertRule(`.crossword-board__item-label--${clue.number} { ${labelStyleString} }`, styleSheet.cssRules.length);
+        });
+
+        insertAfterBegin(`crossword-board--highlight--${keyLower}`, serializedClueLabels.join(''));
+        insertAfterBegin(`crossword-clues__list--${keyLower}`, serializedClues.join(''));
+      }
+
+      // Load labels
+      const max = Math.max.apply(null, [clues.Across.sort((a, b) => { return b.number - a.number; })[0].number, clues.Down.sort((a, b) => { return b.number - a.number; })[0].number]);
+      const serializedLabels = [];
+      for(var i = 1; i <= max; i++) {
+        serializedLabels.push(`<span id="label-${i}" class="crossword-board__item-label crossword-board__item-label--${i}"><span class="crossword-board__item-label-text">${i}</span></span>`);
+      }
+      insertAfterBegin('crossword-board--labels', serializedLabels.join(''));
+
+    };
+  </script>
+</head>
+
+<body>
+  <input type="checkbox" name="checkvaliditems" id="checkvaliditems" />
+  <label for="checkvaliditems">Check for valid squares</label>
+
+  <div class="crossword-board-container">
+    <div id="crossword-board" class="crossword-board crossword-board-for-real">
+      <div class="crossword-board crossword-board--highlight crossword-board--highlight--across"></div>
+      <div class="crossword-board crossword-board--highlight crossword-board--highlight--down"></div>
+      <div class="crossword-board crossword-board--labels"></div>
+      <div class="crossword-clues">
+        <dl class="crossword-clues__list crossword-clues__list--across"></dl>
+        <dl class="crossword-clues__list crossword-clues__list--down"></dl>
+      </div>
+
+      <div class="crossword-complete">well done, champ!</div>
+    </div>
+  </div>
+</body>
