@@ -100,7 +100,7 @@ $combined_writer = $writer[0] . " " . $writer[1];
         max-width: 250px;
         font-weight: bold;
         padding: 13px;
-        margin: 0 13px 13px 0;
+        margin: 0 13px 13px 10px;
       }
 
       /* ** GENERAL CSS ** */
@@ -131,8 +131,9 @@ $combined_writer = $writer[0] . " " . $writer[1];
       }
 
       div.parallax-container { height: 80vh; }
-      .aligncenter { margin: 0 auto; }
+      .aligncenter { margin: 0 auto; text-align: center; }
       .wp-caption-text { font-style: italic; }
+      img.size-large { height: auto; width: 100% }
 
       /* ** MEDIA ** */
       @media(min-width: 994px) {
@@ -176,7 +177,7 @@ $combined_writer = $writer[0] . " " . $writer[1];
 
       <div class="container">
         <span id="author-info">
-          Written by <a style='color: inherit' href='https://pittnews.com/staff/?writer="<?php echo $combined_writer; ?>"'><?php echo $combined_writer; ?></a>
+          Written by <a style='color: inherit; text-decoration: underline;' href='https://pittnews.com/staff/?writer=<?php echo $combined_writer; ?>'><?php echo $combined_writer; ?></a>
         </span><br/>
         <span id="author-info">Photos by <?php echo $photos[0] . " " . $photos[1]; ?></span><br/>
         <span id="date-info"><?php echo the_date(); ?></span><br/>
@@ -210,6 +211,11 @@ $combined_writer = $writer[0] . " " . $writer[1];
         const blockquoteColumn = $el.parent().siblings()[0];
 
         $el.html(elText);
+      });
+
+      $('div[id*="attachment_"]').each((idx, el) => {
+        const $el = $(el);
+        $el.css({ width: '', 'max-width': '910px' });
       });
     });
 
