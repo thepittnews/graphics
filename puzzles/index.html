@@ -4,67 +4,103 @@
   <link href="style-compiled.css" type="text/css" rel="stylesheet" />
   <script>
     const puzzle = [
-      [ 's', 'h', 'r', 'o', 'u', 'd', null, null, 'e', null, 'l', null, 'f' ], //1
-      ['l', null, null, 'r', null, 'a', 'd', 'a', 'm', 's', 'a', 'l', 'e'],//2
-      ['i', null, 's', 'a', 'r', 'i', null, null, 'e', null, 't', null, 'i'], //3
-      ['g', 'r', 'a', 't', 'i', 's', null, 'o', 'r', 'p', 'h', 'a', 'n'], //4
-      ['h', null, 'n', 'o', 'd', null, 'f', null, 'a', 'l', 'e', 'r', 't'], //5
-      ['t', 'i', 'e', 'r', null, 'j', 'e', 'l', 'l', 'y', null, 'e', null], //6
-      [null, 'n', null, null, 'd', 'a', 't', 'e', 'd', null, null, 'a', null], //7
-      [null, 'a', null, 'h', 'a', 'b', 'i', 't', null, 'v', 'e', 's', 't'], //8
-      ['i', 'n', 'f', 'u', 'n', null, 'd', null, 'b', 'i', 'd', null, 'w'], //9
-      ['s', 'e', 'l', 'e', 'c', 't', null, 'n', 'e', 'g', 'a', 't', 'e'], //10
-      ['l', null, 'o', null, 'e', null, null, 'a', 't', 'o', 'm', null, 'l'], //11
-      ['a', 'c', 'c', 'u', 'r', 'a', 'c', 'y', null, 'u', null, null, 'v'], //12
-      ['m', null, 'k', null, 's', null, null, 's', 'o', 'r', 't', 'i', 'e'], //13
+      [ 'f', 'a', 's', null, 't', 'a', 'p', 'i', 'r', null, 'b', 'l', 'a', 'm', 'e' ], //1
+      ['e', 'm', 't', null, 't', 'o', 'r', 't', 'e', null, 'a', 'n', 'n', 'o', 'y'],//2
+      ['d', 'a', 'r', 't', 'y', 'b', 'o', 's', 's', null, 'r', 'o', 'g', 'u', 'e'], //3
+      ['u', 't', 'a', 'h', null, null, 'o', 'l', 'e', 'a', null, null, 'r', 'e', 'd'], //4
+      ['p', 'o', 'w', 'd', 'e', 'r', 'f', 'a', 'n', 't', 'a', 's', 'y', null, null], //5
+      [null, null, null, null, 'd', 'o', 'e', null, 'd', 'e', 'c', 'i', 'b', 'e', 'l'], //6
+      ['o', 'r', 'l', null, 'm', 's', 'r', 'p', null, null, 'e', 'v', 'i', 't', 'a'], //7
+      ['d', 'o', 'u', 'b', 'l', 'e', 's', 'j', 'e', 'o', 'p', 'a', 'r', 'd', 'y'], //8
+      ['e', 't', 'm', 'o', 'i', null, null, 's', 'j', 'w', 's', null, 'd', 's', 's'], //9
+      ['s', 'l', 'i', 'n', 'k', 'y', 's', null, 'o', 'e', 'a', null, null, null, null], //10
+      [null, null, 'n', 'y', 'e', 's', 'c', 'o', 'u', 'n', 't', 'd', 'o', 'w', 'n'], //11
+      ['b', 'e', 'e', null, null, 'l', 'o', 'u', 'r', null, null, 't', 'h', 'o', 'u'], //12
+      ['o', 'm', 'e', 'n', 's', null, 'f', 'i', 'n', 'a', 'l', 'f', 'o', 'u', 'r'], //13
+      ['r', 'u', 'r', 'a', 'l', null, 'f', 'j', 'o', 'r', 'd', null, 'h', 'l', 's'], //14
+      ['e', 's', 's', 'a', 'y', null, 's', 'a', 's', 's', 'e', null, 'o', 'd', 'e'], //15
     ];
 
     const clues = {
       Across: [
-        {number: "1", text: "Cover (6)", labelColumn: 1, highlightColumn: `3/7`},
-        {number: "7", text: "Water (5,3)", labelColumn: 6, labelRow: 2, highlightColumn: `6/14`, highlightRow: 2},
-        {number: "8", text: "Indian Dress (4)", labelColumn: 3, labelRow: 3, hightlightColumn: `3/7`, highlightRow: 3},
-        {number: "10", text: "Without payment (6)", labelColumn: 1, labelRow: 4, highlightColumn: `1/7`, highlightRow: 4},
-        {number: "11", text: "Parentless child (6)", labelColumn: 8, labelRow: 4, highlightColumn: `8/14`, highlightRow: 4},
-        {number: "14", text: "Signal agreement (3)", labelColumn: 3, labelRow: 5, highlightColumn: `3/6`, highlightRow: 5},
-        {number: "16", text: "Vigilant (5)", labelColumn: 9, labelRow: 5, highlightColumn: `9/14`, highlightRow: 5},
-        {number: "17", text: "Row (4)", labelColumn: 1, labelRow: 6, highlightColumn: `1/5`, highlightColumn: 6},
-        {number: "19", text: "Wobbly dessert (5)", highlightColumn: `6/11`, highlightRow: 6},
-        {number: "21", text: "Unfashionable (5)", highlightColumn: `5/10`, highlightRow: 7},
-        {number: "22", text: "Nun's outfit (5)", highlightColumn: `4/9`, highlightRow: 8},
-        {number: "23", text: "Singlet (4)", highlightColumn: `10/14`, highlightRow: 8},
-        {number: "26", text: "As a joke (2,3)", highlightRow: `1/6`, highlightRow: 9},
-        {number: "28", text: "Offer (3)", highlightColumn: `9/12`, highlightRow: 9},
-        {number: "29", text: "Choose (6)", labelColumn: 1, labelRow: 10, highlightColumn: `1/7`, highlightRow: 10},
-        {number: "30", text: "Nullify (6)", labelColumn: 8, labelRow: 10, highlightColumn: `8/14`, highlightRow: 10},
-        {number: "31", text: "Particle of matter (4)", labelColumn: 8, labelRow: 11, highlightColumn: `8/12`, highlightRow: 11},
-        {number: "32", text: "Precision (8)", labelColumn: 1, labelRow: 12, highlightColumn: `1/9`, highlightRow: 12},
-        {number: "33", text: "A sally (6)", labelColumn: 8, labelRow: 13, highlightColumn: `8/14`, highlightRow: 13}
+        {number: "1", text: "They come after mis", labelColumn: 1, highlightColumn: `3/7`},
+        {number: "4", text: "Mammal with a proboscis", labelColumn: 5, highlightColumn: `6/14`, highlightRow: 2},
+        {number: "9", text: "Fault", labelColumn: 11, hightlightColumn: `3/7`, highlightRow: 3},
+        {number: "14", text: "First responder", labelColumn: 1, labelRow: 2, highlightColumn: `1/7`, highlightRow: 4},
+        {number: "15", text: "A sweet cake", labelColumn: 5, labelRow: 2, highlightColumn: `8/14`, highlightRow: 4},
+        {number: "16", text: "Bother", labelColumn: 11, labelRow: 2, highlightColumn: `3/6`, highlightRow: 5},
+        {number: "17", text: "Person in charge of a 2 p.m. rager?", labelColumn: 1, labelRow: 3, highlightColumn: `9/14`, highlightRow: 5},
+        {number: "19", text: "Scoundrel", labelColumn: 11, labelRow: 3, highlightColumn: `1/5`, highlightColumn: 6},
+        {number: "20", text: "State that’s home to Arches National Park", labelColumn: 1, labelRow: 4, highlightColumn: `6/11`, highlightRow: 6},
+        {number: "21", text: "Olive genus", labelColumn: 7, labelRow: 4, highlightColumn: `5/10`, highlightRow: 7},
+        {number: "23", text: "Like a large, children’s book series dog", labelColumn: 13, labelRow: 4, highlightColumn: `4/9`, highlightRow: 8},
+        {number: "24", text: "A daydream about a Johnson & Johnson product?", labelColumn: 1, labelRow: 5, highlightColumn: `10/14`, highlightRow: 8},
+        {number: "29", text: "Federal org. headed by Rick Perry", labelColumn: 5, labelRow: 6, highlightRow: `1/6`, highlightRow: 9},
+        {number: "30", text: "Loudness measure", labelColumn: 9, labelRow: 6, highlightColumn: `9/12`, highlightRow: 9},
+        /* 33?? */
+        {number: "36", text: "Recommended cost of a product", labelColumn: 5, labelRow: 7, highlightColumn: `1/7`, highlightRow: 10},
+        {number: "38", text: '“Don’t Cry for Me, Argentina” musical', labelColumn: 11, labelRow: 7, highlightColumn: `8/14`, highlightRow: 10},
+        {number: "39", text: "A game show for couples?", labelColumn: 1, labelRow: 8, highlightColumn: `8/12`, highlightRow: 11},
+        {number: "43", text: "Me too, to Pierre", labelColumn: 1, labelRow: 9, highlightColumn: `1/9`, highlightRow: 12},
+        {number: "44", text: "Online liberals?", labelColumn: 8, labelRow: 9, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "45", text: "Handheld Nintendo consoles", labelColumn: 13, labelRow: 9, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "46", text: "They bend over backwards to descend steps", labelColumn: 1, labelRow: 10, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "49", text: "Phoenician name for Tripoli", labelColumn: 9, labelRow: 10, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "50", text: "Scientist Bill’s approach to zero?", labelColumn: 3, labelRow: 11, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "56", text: "Spelling ___", labelColumn: 1, labelRow: 12, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "58", text: "Scowl", labelColumn: 6, labelRow: 12, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "59", text: '2000 movie “O Brother, Where Art ___”', labelColumn: 12, labelRow: 12, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "60", text: "Black cats, for example", labelColumn: 1, labelRow: 13, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "63", text: "Texas Tech, Virginia, Auburn and Michigan State... or a hint to the words in circled letters", labelColumn: 7, labelRow: 13, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "66", text: "Like much of Iowa", labelColumn: 1, labelRow: 14, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "67", text: "Body of water between cliffs", labelColumn: 7, labelRow: 14, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "68", text: "Ivy League for future D.A.s", labelColumn: 13, labelRow: 14, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "69", text: "Alternative to final exam", labelColumn: 1, labelRow: 15, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "70", text: "Nebraska senator Ben", labelColumn: 7, labelRow: 15, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "71", text: "What Beethoven writes to express his joy?", labelColumn: 13, labelRow: 15, highlightColumn: `8/14`, highlightRow: 13},
       ],
       Down: [
-        {number: '1', text: 'Slim (6)'},
-        {number: "2", text: "Public speaker (6)", labelColumn: 4},
-        {number: "3", text: "Podium (4)", labelColumn: 6},
-        {number: "4", text: "Gemstone (7)", labelColumn: 9},
-        {number: "5", text: "Turning tool (5)", labelColumn: 11},
-        {number: "6", text: "Mock attack (5)", labelColumn: 13},
-        {number: "8", text: "Sound of mind (4)"},
-        {number: "9", text: "To free (3)", labelColumn: 5, labelRow: 3},
-        {number: "12", text: "Fold (3)", labelColumn: 10, labelRow: 4},
-        {number: "13", text: "Regions (5)", labelColumn: 12, labelRow: 4},
-        {number: "15", text: "Stinking (5)", labelColumn: 7, labelRow: 5},
-        {number: "18", text: "Senseless (5)", labelColumn: 2, labelRow: 6},
-        {number: "19", text: "Quick short punch (3)", labelColumn: 6, labelRow: 6},
-        {number: "20", text: "Permit (3)", labelColumn: 8, labelRow: 6},
-        {number: "21", text: "Ballerinas (7)", labelColumn: 5, labelRow: 7},
-        {number: "22", text: "Shade (3)", labelColumn: 4, labelRow: 8},
-        {number: "23", text: "Vitality (6)", labelColumn: 10, labelRow: 8},
-        {number: "24", text: "Dutch cheese (4)", labelColumn: 11, labelRow: 8},
-        {number: "25", text: "Dozen (6)", labelColumn: 13, labelRow: 8},
-        {number: "26", text: "Muslim religion (5)", labelColumn: 1, labelRow: 9},
-        {number: "27", text: "Group of sheep (5)", labelColumn: 3, labelRow: 9},
-        {number: "28", text: "Wager (3)", labelColumn: 9, labelRow: 9},
-        {number: "30", text: "No votes (4)"}
+        {number: '1', text: "Done (with)"},
+        {number: "2", text: "Latin for beloved", labelColumn: 2},
+        {number: "3", text: "The last ____", labelColumn: 3},
+        {number: "4", text: 'It comes before “L” in a text signoff'},
+        {number: "5", text: "End-of-meeting Q", labelColumn: 6},
+        {number: "6", text: "Like The Pitt News copy editors", labelColumn: 7},
+        {number: "7", text: '“What’s the largest city in Calif. again?”', labelColumn: 8},
+        {number: "8", text: "Mail again", labelColumn: 9},
+        {number: "9", text: "You can set a high one", labelColumn: 11},
+        {number: "10", text: "Mil. liaison", labelColumn: 12},
+        {number: "11", text: "Green pig nemesis?", labelColumn: 13},
+        {number: "12", text: "Pouting expression", labelColumn: 14},
+        {number: "13", text: "Word that follows bright or cross", labelColumn: 15},
+        {number: "18", text: "Meas. of noise in a soundwave", labelColumn: 4, labelRow: 3},
+        {number: "22", text: "Consumed", labelColumn: 10, labelRow: 4},
+        {number: "25", text: "Similar to a party music genre", labelColumn: 5, labelRow: 5},
+        {number: "26", text: "Valentine’s Day flower", labelColumn: 6, labelRow: 5},
+        {number: "27", text: "Get a 1520 on a HS junior year exam", labelColumn: 11, labelRow: 5},
+        {number: "28", text: "Member of the Hindu holy trinity", labelColumn: 12, labelRow: 5},
+        {number: "31", text: "Figs. on airport announcement screens", labelColumn: 14, labelRow: 6},
+        {number: "32", text: "Potato chip brand", labelColumn: 15, labelRow: 6},
+        {number: "33", text: "Plural of 71-across", labelColumn: 1, labelRow: 7},
+        {number: "34", text: "Ex-con’s status", labelColumn: 2, labelRow: 7},
+        {number: "35", text: '"Cleopatra" band', labelColumn: 3, labelRow: 7},
+        {number: "37", text: "Cozy nighttime clothing items", labelColumn: 8, labelRow: 7},
+        {number: "40", text: "Like thin hands", labelColumn: 4, labelRow: 8},
+        {number: "41", text: "Reporters for online publications?", labelColumn: 9, labelRow: 8},
+        {number: "42", text: 'Actor Wilson that “wows” audience', labelColumn: 10, labelRow: 8},
+        {number: "47", text: "Fr. fashion house", labelColumn: 6, labelRow: 10},
+        {number: "48", text: "Laughs (at)", labelColumn: 7, labelRow: 10},
+        {number: "51", text: "Spooky board", labelColumn: 8, labelRow: 11},
+        {number: "52", text: "Tinder question?", labelColumn: 12, labelRow: 11},
+        {number: "53", text: '“What have we here?”', labelColumn: 13, labelRow: 11},
+        {number: "54", text: "Could, should counterpart", labelColumn: 14, labelRow: 11},
+        {number: "55", text: "Medical professional", labelColumn: 15, labelRow: 11},
+        {number: "56", text: "Be tedious", labelColumn: 1, labelRow: 12},
+        {number: "57", text: "Ostrich relatives", labelColumn: 2, labelRow: 12},
+        {number: "61", text: "Oldest aviation club in the U.S.", labelColumn: 4, labelRow: 13},
+        {number: "62", text: "Coy", labelColumn: 5, labelRow: 13},
+        {number: "64", text: "Ess preceders", labelColumn: 10, labelRow: 13},
+        {number: "65", text: "Opposite of BDE?", labelColumn: 11, labelRow: 13}
       ]
     };
 
@@ -125,7 +161,6 @@
         serializedLabels.push(`<span id="label-${i}" class="crossword-board__item-label crossword-board__item-label--${i}"><span class="crossword-board__item-label-text">${i}</span></span>`);
       }
       insertAfterBegin('crossword-board--labels', serializedLabels.join(''));
-
     };
   </script>
 </head>
