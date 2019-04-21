@@ -7,11 +7,13 @@
   position: absolute;
   z-index: 1;
   background: transparent;
-  /*border: 1px solid #000000;*/  /*J*/
+  /*border: 1px solid #000000;  [>J<]*/
   width: 500px;
   height: 500px;
+
   display: grid;
   grid-template: repeat(15, 7.6923076923%)/repeat(15, 7.6923076923%);
+
   list-style-type: none;
   padding: 0;
   margin: 0 auto;
@@ -30,13 +32,13 @@
 .crossword-board__item:active, .crossword-board__item:focus {
   background: #FFFF74;
   border: 1px solid #000000;
-  outline: 1px solid #000000; /*J*/
+  /*outline: 1px solid #000000; [>J<]*/
 }
 
 .crossword-board__item--blank {
   background: #000000;
   border: 1px solid #000000;
-  outline: 1px solid #000000; /*J*/
+  /*outline: 1px solid #000000; [>J<]*/
 }
 
 .crossword-board--labels {
