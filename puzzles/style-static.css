@@ -42,7 +42,7 @@
 
 .crossword-board--labels {
   position: absolute;
-  z-index: 60;
+  z-index: 600;
 }
 
 .crossword-board__item-label {
@@ -87,9 +87,9 @@
   /*vertical-align: top;*/
   /*margin-right:10px;*/
 
-  width:325px;
-  height:100px;
-  float:left;
+  width: 325px;
+  height: 100px;
+  float: left;
 }
 
 .crossword-clues__list-title {
@@ -139,6 +139,5 @@
 #item5-7, #item5-8, #item5-9, #item5-10, #item5-11, #item5-12, #item5-13,
 #item8-8, #item8-9, #item8-10, #item8-11, #item8-12, #item8-13, #item8-14, #item8-15,
 #item11-7, #item11-8, #item11-9, #item11-10, #item11-11, #item11-12, #item11-13, #item11-14, #item11-15 {
-  border-radius: 100%;
-  behavior: url(PIE.htc);
+  background-color: #D3D3D3;
 }
