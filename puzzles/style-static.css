@@ -8,8 +8,8 @@
   z-index: 1;
   background: transparent;
   /*border: 1px solid #000000;  [>J<]*/
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
 
   display: grid;
   grid-template: repeat(15, 7.6923076923%)/repeat(15, 7.6923076923%);
@@ -42,7 +42,7 @@
 
 .crossword-board--labels {
   position: absolute;
-  z-index: 600;
+  z-index: 60;
 }
 
 .crossword-board__item-label {
@@ -76,7 +76,7 @@
 .crossword-clues {
   position: absolute;
   top: 0;
-  left: 600px;
+  left: 490px;
   width: 650px;
 }
 
@@ -133,11 +133,4 @@
   display: inline-block;
   background: #9AFF67;
   cursor: pointer;
-}
-
-#item3-6, #item3-7, #item3-8, #item3-9,
-#item5-7, #item5-8, #item5-9, #item5-10, #item5-11, #item5-12, #item5-13,
-#item8-8, #item8-9, #item8-10, #item8-11, #item8-12, #item8-13, #item8-14, #item8-15,
-#item11-7, #item11-8, #item11-9, #item11-10, #item11-11, #item11-12, #item11-13, #item11-14, #item11-15 {
-  background-color: #D3D3D3;
 }
