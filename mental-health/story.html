@@ -240,7 +240,7 @@
       anecdotes.forEach((anecdote) => {
         var html = "";
         html += anecdote.content.map((c) => { return `<span style="font-weight: 400;">${c}</span><br><br>`; }).join('');
-        html +=`<span style="font-weight: 400;"><span style="font-size: 24px;">—${anecdote.author}</span> (${anecdote.authorInfo})</span>`;
+        html +=`<span style="font-weight: 400;"><span style="font-size: 24px;">&mdash; ${anecdote.author}</span> (${anecdote.authorInfo})</span>`;
         anecdoteContainer.append(`<p>${html}</p>`);
       });
 
