@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,900|Oswald:300,400|Slabo+27px" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-66952241-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-66952241-1');
+    </script>
+
+    <title>James “Pick Patek” Pickering: From the studio to Spotify</title>
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no">
+
+    <style>
+      body { overflow-x: hidden; }
+
+      /* ** TITLES and HEADER ** */
+      #story-title, #header-title {
+        font-weight: 900;
+        font-family: 'Merriweather', serif;
+        color: white;
+      }
+
+      #story-title {
+        background-color: rgba(0, 0, 0, 0);
+        height: 0px;
+        position: relative;
+        top: -225px;
+        left: 100px;
+        font-size: 50px;
+        max-width: 80%;
+        display: block;
+      }
+
+      #header-title {
+        margin-left: auto;
+        margin-right: auto;
+        float: right;
+        padding-right: 20px;
+        opacity: 0;
+        transition: all 1s linear;
+      }
+
+      .show-title {
+        opacity: 1 !important;
+        transition: all 1s linear;
+      }
+
+      nav {
+        background-color: #212121 !important;
+        opacity: 0.8;
+      }
+
+      .brand-logo {
+        height: 40px;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+
+      #author-info, #date-info {
+        font-family: 'Oswald', sans-serif;
+        font-size: 20px;
+      }
+
+      #date-info {
+        font-weight: 300;
+        font-size: 18px;
+      }
+
+      /* ** QUOTES ** */
+      .show-quote {
+        right: 0px !important;
+        transition: right 1s ease-out, border-left 2s ease-in;
+        border-left: 5px solid #5ca0c3 !important;
+      }
+
+      blockquote {
+        font-family: 'Merriweather', serif;
+        font-weight: 900;
+        border-left: 5px solid white;
+
+        float: right;
+        max-width: 250px;
+        font-weight: bold;
+        padding: 13px;
+        margin: 0 13px 13px 10px;
+      }
+
+      /* ** GENERAL CSS ** */
+      .container a:hover {
+        background-color: aliceblue;
+        transition: background-color .5s linear;
+      }
+
+      p {
+        font-family: 'Merriweather', serif;
+        font-weight: 300;
+      }
+
+      .dropcap {
+        float: left;
+        font-size: 75px;
+        line-height: 60px;
+        padding-top: 4px;
+        padding-right: 8px;
+        padding-left: 3px;
+      }
+
+      .header-image {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        object-position: top center;
+      }
+
+      div.parallax-container { height: 80vh; }
+      .aligncenter { margin: 0 auto; text-align: center; }
+      .wp-caption-text { font-style: italic; }
+      img.size-large { height: auto; width: 100% }
+
+      /* ** MEDIA ** */
+      @media(min-width: 994px) {
+        p { font-size: 15px !important; }
+      }
+
+      @media(max-width: 993px) {
+        #header-title { display: none; }
+
+        #story-title {
+          top: -400px !important;
+          left: 50px !important;
+          font-size: 35px !important;
+        }
+      }
+
+      .inline-quote {
+        border-left: 5px solid #5ca0c3 !important;
+        display: block !important;
+      }
+
+      @media(max-width: 600px) {
+        #story-title { top: -225px !important; }
+      }
+    </style>
+  </head>
+
+  <body data-rsssl=1>
+    <div class="navbar-fixed">
+      <nav>
+        &nbsp;
+        <a href="https://pittnews.com"><img class="brand-logo" src="https://pittnews.com/wp-content/uploads/2018/03/TPN-VECTOR-BLUE-small.png" /></a>
+        <span id="header-title">Mental Health at Pitt</span>
+      </nav>
+    </div>
+
+    <img class="header-image" src="https://pittnews.com/wp-content/uploads/2019/03/KC1_3171.jpg" />
+
+    <div class="section white">
+      <h4 id="story-title" style="background-color:rgba(0,255,0,0);">Mental Health at Pitt</h4>
+
+      <div class="container">
+        <span id="author-info">
+          Written by <a style='color: inherit; text-decoration: underline;' href='https://pittnews.com/staff/?writer=Sarah Connor'>The Pitt News Staff</a>
+        </span><br/>
+        <span id="author-info">Photos by Knox Coulter</span><br/>
+        <span id="date-info">April 3, 2019</span><br/>
+      </div>
+    </div>
+
+    <div class="section white">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m11">
+            <p><span style="font-weight: 400;">
+              Here at The Pitt News blah blah blah
+            </span></p>
+
+            <br>
+            <hr>
+            <br>
+
+            <div id="anecdoteContainer"></div>
+            <div class="card card-small blue-grey darken-1">
+              <div class="card-content white-text">
+                <a style="text-decoration: underline; font-weight: 900; font-family: 'Merriweather', serif; color: white; font-size: 24px;" href="https://pittnews.com/silhouettes/">Read more silhouettes from The Pitt News</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.parallax').parallax();
+
+      const anecdoteContainer = $("div#anecdoteContainer");
+      const anecdotes = [
+        {
+          content: [
+            '<span class="dropcap">I</span> am a recent grad, I started at Pitt in the 2014-2015 school year. I have bipolar disorder, and I’ve struggled with self harm and suicidal thoughts. This made my education difficult, but for my first two years at Pitt, I was able to visit the counseling center for regular psychiatrist and therapist visits. This was a free service with the activity fee, and my psychiatrist helped me finally find the right medications to use. After my first two years, the counseling center changed to limit the number of sessions a student could have and I was dropped from their system. It was difficult, but I found a new psychiatrist elsewhere.',
+            'A year or so later I came back to the counseling center to find somebody to talk to for a few therapy sessions to help me through a personal issue. At the triage appointment, they determined that my bipolar disorder and the thoughts of self harm that came with it were too severe for their services. The referral system wasn’t very helpful and I ended up just not seeing anybody through this difficult time. I think it’s great that the counseling center wants to help more students, but I felt like they were leaving behind students whose problems were “too severe.'
+          ],
+          author: 'Eli',
+          authorInfo: "Pitt '18"
+        },
+        {
+          content: [
+            "<span class='dropcap'>H</span>ere's my story.  I first started to noticed I was falling into a depression towards the start of my junior year.  I eventually signed up to speak with a councilor who then referred me to a therapeutic group.  I found my experience with mental health services at Pitt to be wonderful and I still think about to it today.  I am currently a social worker and I work as a facilitator in therapeutic groups.  While I was already on my path to social work in my junior year, my time as a client in a group at Pitt really encouraged me to take a risk and accept my current role on the clinical side.",
+            "The real reason I wanted to write in was because I feel like mental health--particularly depression--is not talked about enough on college campuses.  On the outside, undergrads look like (and for the most part are) living the time of their lives.  But inside, many are scared of the future, uncertain of themselves, and not sure where to even start the conversation.  I was fortunate to have a friend at Pitt, who was a couple of years old than me, and struggled with depression too.  My friend encouraged me to get help and encouraged me to work to get better."
+          ],
+          author: 'Mike Rosenberg',
+          authorInfo: "Pitt School of Social Work '13"
+        },
+        {
+          content: [
+            "<span class='dropcap'>I</span> know I am one of the few lucky ones. I was in a mental health crisis when I was told spots were filled at the counseling center, a little over a year ago. They asked if I wanted to see a counselor who would help me find a permanent therapist here in Pittsburgh. Over the next few weeks, my counselor helped me call several local therapists, none of which worked out. Over those weeks, my counselor and I developed a great relationship and he just had an opening to work more. That saved my life. A year later, we still meet regularly and I am doing immeasurably better. The Counseling Center is filled with amazing staff who are invaluable but the financial restrictions the school administration puts them under only serve to further hinder the student population. I wish the Gallagher and the administration would care just a tiny bit more and provide all students who need it with the opportunities I was so luckily granted."
+          ],
+          author: "Sunanda Tamrakar",
+          authorInfo: "Pitt Undergraduate School of Arts and Sciences '20"
+        },
+        {
+          content: [
+            "<span class='dropcap'>I</span> 'm currently a junior on campus majoring in rehabilitation science and psychology. Mental illness has affected me throughout my entire life, whether it is with my family, friends, or my own mental health. It is always an ongoing process of taking care to manage my major depression, trauma, and anxiety disorders. I have sought help many different ways since high school, through the Pitt counseling center, hotlines, text lines, and private therapy. During my freshman year at Pitt, I lost a friend to suicide.",
+            "The Pitt counseling center does what it is capable of, but it has its limitations. One center responsible for treating over 20,000 undergrad and grad students can only handle so much, but many students and staff are working to try to make changes. As both a recipient of care and advocate with the club Active Minds I talk with a lot of students that have both good and bad experiences with the counseling center. We talk through the bad experiences, as well as reach out to other students about their experiences, try to fill in the gaps of care, provide education and resources, and connect people to off campus counseling. We are working on communicating these issues to our advisor in the counseling center, and plan to work with the new director in the future to voice what we have seen on campus. Within our group of students in Active Minds, we spend time talking about the issues we see in the current mental health care as many Pitt students do, but we then try to channel that frustration into meaningful programming, speakers, and peer education. Ultimately instead of just complaining about the services, we are trying to do what we can to engage and improve the center and campus culture without increasing stigma about seeking help by spreading overwhelmingly negative images of the counseling center. We portray a more accurate, balanced view of the center because often a lot of students that would benefit immensely from Pitt short term counseling are afraid to seek help because of the bad stories that are amplified, when people with good experiences are afraid to speak out in comparison.",
+            "As for my own mental health care I have settled happily into off-campus therapy. The Pitt Counseling center actually also can do referrals via email (without an in-person appointment) which is think is really under-advertised and would greatly ease the waitlist. A lot of students already know they just want private therapy but don't know where to look, and the counseling center has staff that can be emailed for referrals (I can share her email but I would have to check with her if she is okay with it being published). At Active Minds we have developed one presentation/workshop on finding a therapist that we will be trying to bring to different student groups in the Fall. (and we are always looking for more students and ideas!)"
+          ],
+          author: 'Julia Lam',
+          authorInfo: "Pitt Undergraduate School of Arts and Sciences '20"
+        }
+      ];
+
+      anecdotes.forEach((anecdote) => {
+        var html = "";
+        html += anecdote.content.map((c) => { return `<span style="font-weight: 400;">${c}</span><br><br>`; }).join('');
+        html +=`<span style="font-weight: 400;"><span style="font-size: 24px;">—${anecdote.author}</span> (${anecdote.authorInfo})</span>`;
+        anecdoteContainer.append(`<p>${html}</p>`);
+      });
+
+      $('blockquote.inline-quote').each((idx, el) => {
+        const $el =  $(el);
+        const elText = $el.text();
+        const elStyle = $el.data('style');
+        const blockquoteColumn = $el.parent().siblings()[0];
+
+        $el.html(elText);
+      });
+
+      $('div[id*="attachment_"]').each((idx, el) => {
+        const $el = $(el);
+        $el.css({ width: '', 'max-width': '910px' });
+      });
+    });
+
+    $(window).scroll(function() {
+      const scrollTop = $(window).scrollTop();
+      if (scrollTop > 300) {
+        $("#header-title").addClass('show-title');
+      } else {
+        $('#header-title').removeClass('show-title');
+      }
+
+      $("blockquote[class!='inline-quote']").each((idx, el) => {
+        var $el = $(el);
+        if (scrollTop > $el.offset().top - 600) {
+          $el.addClass('show-quote');
+        }
+      });
+    });
+  </script>
+</html>
