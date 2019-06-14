@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,900|Oswald:300,400|Slabo+27px" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-66952241-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-66952241-1');
+    </script>
+
+    <title>Mental Health: TKTK</title>
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no">
+
+    <style>
+      body { overflow-x: hidden; }
+
+      /* ** TITLES and HEADER ** */
+      #story-title, #header-title {
+        font-weight: 900;
+        font-family: 'Merriweather', serif;
+      }
+
+      #header-title {
+        color: white;
+      }
+
+      #story-title {
+        background-color: rgba(0, 0, 0, 0);
+        height: 0px;
+        position: relative;
+        top: -225px;
+        left: 100px;
+        font-size: 50px;
+        max-width: 80%;
+        display: block;
+        color: black;
+      }
+
+      #header-title {
+        margin-left: auto;
+        margin-right: auto;
+        float: right;
+        padding-right: 20px;
+        opacity: 0;
+        transition: all 1s linear;
+      }
+
+      .show-title {
+        opacity: 1 !important;
+        transition: all 1s linear;
+      }
+
+      nav {
+        background-color: #212121 !important;
+        opacity: 0.8;
+      }
+
+      .brand-logo {
+        height: 40px;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+
+      #author-info, #date-info {
+        font-family: 'Oswald', sans-serif;
+        font-size: 20px;
+      }
+
+      #date-info {
+        font-weight: 300;
+        font-size: 18px;
+      }
+
+      /* ** QUOTES ** */
+      .show-quote {
+        right: 0px !important;
+        transition: right 1s ease-out, border-left 2s ease-in;
+        border-left: 5px solid #5ca0c3 !important;
+      }
+
+      blockquote {
+        font-family: 'Merriweather', serif;
+        font-weight: 900;
+        border-left: 5px solid white;
+
+        float: right;
+        max-width: 250px;
+        font-weight: bold;
+        padding: 13px;
+        margin: 0 13px 13px 10px;
+      }
+
+      /* ** GENERAL CSS ** */
+      .container a:hover {
+        background-color: aliceblue;
+        transition: background-color .5s linear;
+      }
+
+      p {
+        font-family: 'Merriweather', serif;
+        font-weight: 300;
+      }
+
+      .dropcap {
+        float: left;
+        font-size: 75px;
+        line-height: 60px;
+        padding-top: 4px;
+        padding-right: 8px;
+        padding-left: 3px;
+      }
+
+      .header-image {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        object-position: top center;
+      }
+
+      div.parallax-container { height: 80vh; }
+      .aligncenter { margin: 0 auto; text-align: center; }
+      .wp-caption-text { font-style: italic; }
+      img.size-large { height: auto; width: 100% }
+
+      /* ** MEDIA ** */
+      @media(min-width: 994px) {
+        p { font-size: 15px !important; }
+      }
+
+      @media(max-width: 993px) {
+        #header-title { display: none; }
+
+        #story-title {
+          top: -400px !important;
+          left: 50px !important;
+          font-size: 35px !important;
+        }
+      }
+
+      .inline-quote {
+        border-left: 5px solid #5ca0c3 !important;
+        display: block !important;
+      }
+
+      @media(max-width: 600px) {
+        #story-title { top: -225px !important; }
+      }
+    </style>
+  </head>
+
+  <body data-rsssl=1>
+    <div class="navbar-fixed">
+      <nav>
+        &nbsp;
+        <a href="https://pittnews.com"><img class="brand-logo" src="https://pittnews.com/wp-content/uploads/2018/03/TPN-VECTOR-BLUE-small.png" /></a>
+        <span id="header-title">Stories from the Ground Floor of Nordenberg Hall</span>
+      </nav>
+    </div>
+
+    <img class="header-image" src="img3.jpg" />
+
+    <div class="section white">
+      <h4 id="story-title" style="background-color:rgba(0,255,0,0);">Stories from the Ground Floor of Nordenberg Hall: Pitt students discuss their experiences with the UCC</h4>
+
+      <div class="container">
+        <span id="author-info">
+          Compiled by <a style='color: inherit; text-decoration: underline;' href='https://pittnews.com/'>The Pitt News Staff</a>
+        </span><br/>
+        <span id="author-info">Illustrations by Eli Savage, Staff Illustrator at The Pitt News</span><br/>
+        <span id="date-info">June 14, 2019</span><br/>
+      </div>
+    </div>
+
+    <div class="section white">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m11">
+            <div id="anecdoteContainer"></div>
+            <div class="card card-small blue-grey darken-1">
+              <div class="card-content white-text">
+                <a style="text-decoration: underline; font-weight: 900; font-family: 'Merriweather', serif; color: white; font-size: 24px;" href="index.html">Read more about the collaboration between TPN and the PPG</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.parallax').parallax();
+
+      const anecdoteContainer = $("div#anecdoteContainer");
+      const anecdotes = [
+        {
+          content: [
+            '<span class="dropcap">I</span> am a recent grad, I started at Pitt in the 2014-2015 school year. I have bipolar disorder, and I’ve struggled with self harm and suicidal thoughts. This made my education difficult, but for my first two years at Pitt, I was able to visit the counseling center for regular psychiatrist and therapist visits. This was a free service with the activity fee, and my psychiatrist helped me finally find the right medications to use. After my first two years, the counseling center changed to limit the number of sessions a student could have and I was dropped from their system. It was difficult, but I found a new psychiatrist elsewhere.',
+            'A year or so later I came back to the counseling center to find somebody to talk to for a few therapy sessions to help me through a personal issue. At the triage appointment, they determined that my bipolar disorder and the thoughts of self harm that came with it were too severe for their services. The referral system wasn’t very helpful and I ended up just not seeing anybody through this difficult time. I think it’s great that the counseling center wants to help more students, but I felt like they were leaving behind students whose problems were “too severe.”'
+          ],
+          author: 'Eli',
+          authorInfo: "Pitt '18"
+        },
+        {
+          content: [
+            `<span class="dropcap">H</span>ere's my story.  I first started to noticed I was falling into a depression towards the start of my junior year.  I eventually signed up to speak with a councilor who then referred me to a therapeutic group.  I found my experience with mental health services at Pitt to be wonderful and I still think about to it today.  I am currently a social worker and I work as a facilitator in therapeutic groups.  While I was already on my path to social work in my junior year, my time as a client in a group at Pitt really encouraged me to take a risk and accept my current role on the clinical side.`,
+            `The real reason I wanted to write in was because I feel like mental health--particularly depression--is not talked about enough on college campuses.  On the outside, undergrads look like (and for the most part are) living the time of their lives.  But inside, many are scared of the future, uncertain of themselves, and not sure where to even start the conversation.  I was fortunate to have a friend at Pitt, who was a couple of years old than me, and struggled with depression too.  My friend encouraged me to get help and encouraged me to work to get better.`
+          ],
+          author: 'Mike Rosenberg',
+          authorInfo: "Pitt School of Social Work '13"
+        },
+        {
+          content: [
+            `<span class="dropcap">I</span> know I am one of the few lucky ones. I was in a mental health crisis when I was told spots were filled at the counseling center, a little over a year ago. They asked if I wanted to see a counselor who would help me find a permanent therapist here in Pittsburgh. Over the next few weeks, my counselor helped me call several local therapists, none of which worked out. Over those weeks, my counselor and I developed a great relationship and he just had an opening to work more. That saved my life. A year later, we still meet regularly and I am doing immeasurably better. The Counseling Center is filled with amazing staff who are invaluable but the financial restrictions the school administration puts them under only serve to further hinder the student population. I wish the Gallagher and the administration would care just a tiny bit more and provide all students who need it with the opportunities I was so luckily granted.`,
+          ],
+          author: "Sunanda Tamrakar",
+          authorInfo: "Pitt Undergraduate School of Arts and Sciences '20"
+        },
+        {
+          content: [
+            `<span class="dropcap">I</span>'m currently a junior on campus majoring in rehabilitation science and psychology. Mental illness has affected me throughout my entire life, whether it is with my family, friends, or my own mental health. It is always an ongoing process of taking care to manage my major depression, trauma, and anxiety disorders. I have sought help many different ways since high school, through the Pitt counseling center, hotlines, text lines, and private therapy. During my freshman year at Pitt, I lost a friend to suicide.`,
+            `The Pitt counseling center does what it is capable of, but it has its limitations. One center responsible for treating over 20,000 undergrad and grad students can only handle so much, but many students and staff are working to try to make changes. As both a recipient of care and advocate with the club Active Minds I talk with a lot of students that have both good and bad experiences with the counseling center. We talk through the bad experiences, as well as reach out to other students about their experiences, try to fill in the gaps of care, provide education and resources, and connect people to off campus counseling. We are working on communicating these issues to our advisor in the counseling center, and plan to work with the new director in the future to voice what we have seen on campus. Within our group of students in Active Minds, we spend time talking about the issues we see in the current mental health care as many Pitt students do, but we then try to channel that frustration into meaningful programming, speakers, and peer education. Ultimately instead of just complaining about the services, we are trying to do what we can to engage and improve the center and campus culture without increasing stigma about seeking help by spreading overwhelmingly negative images of the counseling center. We portray a more accurate, balanced view of the center because often a lot of students that would benefit immensely from Pitt short term counseling are afraid to seek help because of the bad stories that are amplified, when people with good experiences are afraid to speak out in comparison.`,
+            `As for my own mental health care I have settled happily into off-campus therapy. The Pitt Counseling center actually also can do referrals via email (without an in-person appointment) which is think is really under-advertised and would greatly ease the waitlist. A lot of students already know they just want private therapy but don't know where to look, and the counseling center has staff that can be emailed for referrals (I can share her email but I would have to check with her if she is okay with it being published). At Active Minds we have developed one presentation/workshop on finding a therapist that we will be trying to bring to different student groups in the Fall. (and we are always looking for more students and ideas!)`
+          ],
+          author: 'Julia Lam',
+          authorInfo: "Pitt Undergraduate School of Arts and Sciences '20"
+        },
+        {
+          content: [
+            `<span class="dropcap">I</span>'m Madison Shaftic, 2018 graduate from Pitt. I used the counseling center, specifically Pelin Duzenli who is the main psychiatrist. She was one of the most awful experiences at Pitt. I started seeing her spring of 2017, and she prescribed me meds, one of which had very bad withdrawal if one day is missed. I was fine on them and had tons of check ins, however when it came to the semester ending, I found out she did not write me enough refills to get through summer. I was a month short and had no way to get ahold of her because I was not taking summer classes and could not afford to pay the fee to use student health in the summer. So, I had the worst withdrawal of my life for weeks until I managed to get my PCP who originally prescribed the meds to give me one refill as an emergency. I felt worse than I ever had and was at my lowest on top of the withdrawal that was awful. I was starting an internship at the time and it was a horrible experience, having my mood plummet and also being nauseous, having vertigo, and being fatigued at all times. It was completely unprofessional for a psychiatrist to be that careless and endanger a client's life. She also tried to do it again the next summer, but I found out before spring semester ended so I was able to call and get her to refill. Pitt needs more psychiatrists, specifically competent ones. I am not the only one who has had a problem with her.`
+          ],
+          author: 'Madison Shaftic',
+          authorInfo: "Pitt '18"
+        },
+        {
+          content: [
+            `<span class="dropcap">I</span> found the mental health services on campus pretty frustrating. I got diagnosed with anxiety spring of my freshman year and depression in the fall of my sophomore year. These were both diagnosed through my really amazing doctor at student health. With her help, I got an emergency evaluation appointment the next day. They essentially said that I wasn't bad enough to be considered for anything that is more involved than 2x / month therapy but then followed it by saying that they didn't have any space for me so they sent me a list of people to try and told me that I could come for a workshop where they talked about specific coping skills if I wanted to. I tried 4 therapists/counselors, and none of them helped at all. One even seemed more interested in being my friend than actually helping me work things out and improve my life. He just wanted to talk to me about my hobbies. Eventually, I said eff this and stopped going. It was too much money and time to not be seeing any changes. Nobody in student health/the counseling center/or otherwise explained to me why therapy is supposed to help but I just thought it was something I was supposed to do. I think it's absolutely unacceptable that our services are so lacking when we have a large student population who desperately needs mental health support. I did get in with a student health psychiatrist, and I'm very thankful for her help in managing my symptoms.`
+          ],
+          author: 'Madi Scull',
+          authorInfo: "Pitt '19"
+        },
+        {
+          content: [
+            `<span class="dropcap">I</span> am a current senior engineering student.  I have struggled with my mental health throughout high school, but it was exaggerated while in college.  Freshman year, there is so much pressure put onto students to try and reach an average.  I came from a "below-average" high school, and I was nowhere near the academic level of most of my classmates.  This took a toll on me, where if I reached out for help, I was always greeted with the response "You should know this from high school."`,
+            `As I became more acclimated to the climate of college life, this mentality did not change.  I decided in my second semester to visit the counseling center.  I called, and made an appointment 2 weeks from then.  I had to wait 2 weeks while my life felt like it was crumbling down around me.  Project after project, along with failing one or two classes, I had to anxiously wait for 2 weeks to even talk to someone about it.`,
+            `When I got to the counseling center, 15 minutes before my scheduled time, I had to wait another half hour past my appointment to even have my name called.  I walked back, and learned that the person I was seeing was not a licensed counselor, but a grad student.  I felt like I was being thrown to the side, like I wasn't good enough for someone licensed to handle these situations.  I explained that I felt like I was not good enough, smart enough, capable enough to handle college, and she offered little to no feedback.  I started crying and hyperventilating because I had no idea what was going on, and my mind was running through millions of thoughts.  She left the room at one point to go talk to a colleague, and she came back and told me they were going to transport me to Western Psych for a preliminary scan.  I just started sobbing more, since that took away from my studying time, but they called Pitt Police to make sure I got there.`,
+            `Western Psych was a whole other story, but needless to say I was there for 5 hours, watching HGTV in the waiting room by myself.  The doctor there saw me for 10 minutes, told me to go to a triage assessment off campus, and let me leave.  I went to that triage, and they told me I would have to attend meetings 3 times/week for 3 hours/meeting.  That was absolutely not doable along with school, so I left and never went back.`,
+            `Fast forward to junior year, I went back to the health center for a different, but related, problem, which was PTSD from rape and an eating disorder: both which sprouted from my previous relationship with my ex-boyfriend.  I went to the health center first because of the subsequent bodily health issues.  I had a wonderful experience with the doctor, she explained why I was feeling faint and why I was always tired.  She also told me that I had mental health issues that needed to be straightened out along with the bodily health issues, and she suggested right away to see someone off campus, due to the counseling center's strict "8 visits/student"policy.  I was glad to set up an appointment, but still anxious she would send me straight to Western Psych again.  I had my first meeting with the therapist, who is in Squirrel Hill, and I've been going to her ever since.`,
+            `I am ashamed to go to a university that has such poor policies for mental health, especially since Pittsburgh is so centered with hospital systems (UPMC, Highmark, AGHN, etc).  8 meetings per academic year is absolutely abysmal.  It does not even cover one semester of weekly meetings.  For some students, like me, having a therapy on campus is absolutely important, since academics are held at a high prestige.  However, I see that I get better care elsewhere, so if I have to go elsewhere, so be it.`,
+          ],
+          author: "Anonymous",
+          authorInfo: "Pitt '19"
+        }
+      ];
+
+      anecdotes.forEach((anecdote) => {
+        var html = "";
+        html += anecdote.content.map((c) => { return `<span style="font-weight: 400;">${c}</span><br><br>`; }).join('');
+        html +=`<span style="font-weight: 400;"><span style="font-size: 24px;">&mdash; ${anecdote.author}</span> (${anecdote.authorInfo})</span>`;
+        anecdoteContainer.append(`<p>${html}</p>`);
+      });
+
+      $('blockquote.inline-quote').each((idx, el) => {
+        const $el =  $(el);
+        const elText = $el.text();
+        const elStyle = $el.data('style');
+        const blockquoteColumn = $el.parent().siblings()[0];
+
+        $el.html(elText);
+      });
+
+      $('div[id*="attachment_"]').each((idx, el) => {
+        const $el = $(el);
+        $el.css({ width: '', 'max-width': '910px' });
+      });
+    });
+
+    $(window).scroll(function() {
+      const scrollTop = $(window).scrollTop();
+      if (scrollTop > 300) {
+        $("#header-title").addClass('show-title');
+      } else {
+        $('#header-title').removeClass('show-title');
+      }
+
+      $("blockquote[class!='inline-quote']").each((idx, el) => {
+        var $el = $(el);
+        if (scrollTop > $el.offset().top - 600) {
+          $el.addClass('show-quote');
+        }
+      });
+    });
+  </script>
+</html>
