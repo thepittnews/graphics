@@ -1,5 +1,6 @@
 *.DS_Store
 *.jpg
+!mental-health/*.jpg
 *.jpeg
 gun-violence-2018-11-30/.Renviron
 node_modules
