@@ -32,12 +32,14 @@
 
       #story-title {
         background-color: rgba(0, 0, 0, 0);
-        height: 0px;
+        /*height: 0px;
         position: relative;
         top: -225px;
         left: 100px;
         font-size: 50px;
-        max-width: 80%;
+        max-width: 80%;*/
+        font-size: 30px;
+        text-align: center;
         display: block;
         color: black;
       }
@@ -151,6 +153,13 @@
       @media(max-width: 600px) {
         #story-title { top: -225px !important; }
       }
+
+      .img-new {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%; height: 40%;
+      }
     </style>
   </head>
 
@@ -163,18 +172,20 @@
       </nav>
     </div>
 
-    <img class="header-image" src="img2.jpg" />
-
     <div class="section white">
       <h4 id="story-title" style="background-color:rgba(0,255,0,0);">The Growth of Group Therapy</h4>
 
       <div class="container">
-        <span id="author-info">
-          Written by <a style='color: inherit; text-decoration: underline;' href='https://ppuglobe.com/staff-profiles/?writer=Andrew%20Brinker'>Andrew Brinker</a> and
-          <a style='color: inherit; text-decoration: underline;' href='https://ppuglobe.com/staff-profiles/?writer=Jordyn%20Hronec'>Jordan Hronec</a>, News Editors at The Point Park Globe
-        </span><br/>
-        <span id="author-info">Illustrations by Eli Savage, Staff Illustrator at The Pitt News</span><br/>
-        <span id="date-info">June 14, 2019</span><br/>
+        <img src="img2.jpg" class="img-new" />
+
+        <div style="text-align: justify;">
+          <span id="author-info">
+            Written by <a style='color: inherit; text-decoration: underline;' href='https://ppuglobe.com/staff-profiles/?writer=Andrew%20Brinker'>Andrew Brinker</a> and
+            <a style='color: inherit; text-decoration: underline;' href='https://ppuglobe.com/staff-profiles/?writer=Jordyn%20Hronec'>Jordan Hronec</a>, News Editors at The Point Park Globe
+          </span><br/>
+          <span id="author-info">Illustrations by Eli Savage, Staff Illustrator at The Pitt News</span><br/>
+          <span id="date-info">June 14, 2019</span><br/>
+        </div>
       </div>
     </div>
 
