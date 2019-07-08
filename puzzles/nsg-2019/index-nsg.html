@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<head>
+  <link href="style-static.css" type="text/css" rel="stylesheet" />
+  <script>
+    const puzzle = [
+      [ 't', 'm', 'e', 'd', null, null, 's', 'a', 'l', null, 'a', 'r', 'e', 'n', 'a' ],
+      [ 'a', 'c', 'l', 'e', 'f', null, 't', 'i', 'o', null, 'v', 'e', 'x', 'e', 'd' ],
+      [ 'p', 'r', 'o', 'c', 'l', 'a', 'i', 'm', 's', null, 'a', 's', 't', 'r', 'o' ],
+      [ null, null, null, 'o', 'u', 'g', 'h', 't', 't', 'o', null, 'p', 'r', 'o', 's'],
+      ['f', 'o', 'u', 'r', 'o', 'c', 'l', 'o', 'c', 'k', 't', 'e', 'a', null, null ],
+      ['o', 's', 'h', 'e', 'r', null, null, null, null, 'a', 'o', 'c', null, null, null ],
+      [ 'n', 't', 'u', null, null, 'e', 'x', 'c', 'e', 'p', 't', 't', 'h', 'a', 't' ],
+      ['z', 'e', 'r', 'o', 'c', 'a', 'l', 'o', 'r', 'i', 'e', 's', 'o', 'd', 'a' ],
+      [ 'y', 'o', 'u', 't', 'h', 's', 'i', 'z', 'e', 's', null, null, 't', 'i', 'c' ],
+      [ null, null, null, 't', 'o', 'y', null, null, null, null, 's', 'l', 'e', 'e', 'k' ],
+      [ null, null, 'd', 'o', 'c', 't', 'o', 'r', 'o', 'c', 't', 'o', 'p', 'u', 's' ],
+      [ 'c', 'r', 'a', 'm', null, 'o', 'p', 'e', 'n', 'e', 'r', 's', null, null, null ],
+      [ 'l', 'o', 'r', 'a', 's', null, 'r', 'o', 'c', 'k', 'e', 't', 'm', 'a', 'n' ],
+      [ 'a', 'm', 'i', 'n', 'o', null, 'a', 'w', 'e', null, 'p', 'i', 'a', 'n', 'o' ],
+      [ 'y', 'e', 'a', 's', 't', null, 'h', 'e', 's', null, null, 'n', 'e', 't', 's' ],
+    ];
+
+    const clues = {
+      Across: [
+        {number: "1", text: "Slapped a copyright on", labelColumn: 1, highlightColumn: `3/7`},
+        {number: "5", text: "Ride in space, familiarly", labelColumn: 7},
+        {number: "8", text: "The Pittsburgh Penguins' PPG Paints, for one", labelColumn: 11, hightlightColumn: `3/7`, highlightRow: 3},
+        {number: "13", text: "Roman ___ (thinly veiled nonfiction)", labelColumn: 1, labelRow: 2, highlightColumn: `1/7`, highlightRow: 4},
+        {number: "15", text: "Uncle, in SPAN 0101", labelColumn: 7, labelRow: 2, highlightColumn: `8/14`, highlightRow: 4},
+        {number: "16", text: "Annoyed", labelColumn: 11, labelRow: 2, highlightColumn: `3/6`, highlightRow: 5},
+        {number: "17", text: `Pitt mascot's favorite synonym for "says so"`, labelColumn: 1, labelRow: 3, highlightColumn: `9/14`, highlightRow: 5},
+        {number: "19", text: "Houston ballplayer, like former Pitt pitcher Derek West", labelColumn: 11, labelRow: 3, highlightColumn: `1/5`, highlightColumn: 6},
+        {number: "20", text: "You ___ study more", labelColumn: 4, labelRow: 4, highlightColumn: `6/11`, highlightRow: 6},
+        {number: "22", text: "Next stop after playing for a Pitt sports team", labelColumn: 12, labelRow: 4, highlightColumn: `5/10`, highlightRow: 7},
+        {number: "23", text: "Pitt mascot's favorite English afternoon appointment", labelColumn: 1, labelRow: 5, highlightColumn: `4/9`, highlightRow: 8},
+        {number: "27", text: `Pitt's "Lifelong Learning Institute"`, labelColumn: 1, labelRow: 6, highlightColumn: `10/14`, highlightRow: 8},
+        {number: "28", text: "Young U.S. Rep. from NY-14", labelColumn: 10, labelRow: 6, highlightRow: `1/6`, highlightRow: 9},
+        {number: "29", text: "Singaporean engineering sch., and somewhere Pitt students frequently conduct research", labelColumn: 1, labelRow: 7, highlightColumn: `9/12`, highlightRow: 9},
+        {number: "30", text: "But", labelRow: 7, labelColumn: 6},
+        {number: "37", text: "Pitt mascot's favorite low-sugar drink", labelColumn: 1, labelRow: 8, highlightColumn: `1/7`, highlightRow: 10},
+        {number: "40", text: "Smalls", labelColumn: 1, labelRow: 9, highlightColumn: `8/14`, highlightRow: 10},
+        {number: "41", text: "__-Tac", labelColumn: 13, labelRow: 9, highlightColumn: `8/12`, highlightRow: 11},
+        {number: "42", text: "Mess (with)", labelColumn: 4, labelRow: 10, highlightColumn: `1/9`, highlightRow: 12},
+        {number: "43", text: "Aerodynamic", labelColumn: 11, labelRow: 10, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "45", text: "Pitt mascot's favorite tentacled Spider-Man villain", labelColumn: 13, labelRow: 9, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "50", text: "Something Pitt students do before final exams", labelColumn: 1, labelRow: 10, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "52", text: "Pitt Tonight host Andrew Dow's first jokes of the night", labelColumn: 6, labelRow: 12, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "53", text: `Game of Thrones's "Knight of Flowers"`, labelColumn: 1, labelRow: 13, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "55", text: "Pitt mascot's favorite 2019 musical biopic", labelColumn: 7, labelRow: 13, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "59", text: "___ acid, a protein building block", labelColumn: 1, labelRow: 14, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "60", text: 'Amazement', labelColumn: 7, labelRow: 14, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "61", text: "Instrument found in the Pitt Orchestra", labelColumn: 11, labelRow: 14, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "62", text: "Bread leavener", labelColumn: 1, labelRow: 15, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "63", text: "__ Just Not That Into You", labelColumn: 7, labelRow: 15, highlightColumn: `8/14`, highlightRow: 13},
+        {number: "64", text: "Views from the Zoo?", labelColumn: 12, labelRow: 15, highlightColumn: `8/14`, highlightRow: 13},
+      ],
+      Down: [
+        {number: '1', text: "Type of dance"},
+        {number: "2", text: "Gerard Way’s band, to fans", labelColumn: 2},
+        {number: "3", text: "Rating system used by FiveThirtyEight’s NFL model", labelColumn: 3},
+        {number: "4", text: 'Prepare apples for pie-making'},
+        {number: "5", text: "German chainsaw manufacturer", labelColumn: 7},
+        {number: "6", text: "Intend to", labelColumn: 8},
+        {number: "7", text: `What’s missing after a shipwrek?`, labelColumn: 9},
+        {number: "8", text: "Director DuVernay", labelColumn: 11},
+        {number: "9", text: "They’re paid at funerals", labelColumn: 12},
+        {number: "10", text: "Credit option", labelColumn: 13},
+        {number: "11", text: "Fiddling emperor, or a Pitt physics professor", labelColumn: 14},
+        {number: "12", text: "Hubbubs", labelColumn: 15},
+        {number: "14", text: "-ide prefix", labelColumn: 5, labelRow: 2},
+        {number: "18", text: "Secondary Pittsburgh airport code", labelColumn: 6, labelRow: 3},
+        {number: "21", text: `"Forest giraffes" native to the Congo`, labelColumn: 10, labelRow: 4},
+        {number: "23", text: "Happy Days nickname, almost", labelColumn: 1, labelRow: 5},
+        {number: "24", text: "___porosis", labelColumn: 2, labelRow: 5},
+        {number: "25", text: `Swahili word for freedom, and the source of a "Star Trek" name`, labelColumn: 3, labelRow: 5},
+        {number: "26", text: "Beach bag", labelColumn: 11, labelRow: 5},
+        {number: "30", text: `"You’d Be So ___ Love" (Cole Porter)`, labelRow: 7, labelColumn: 6},
+        {number: "31", text: "XVI + XXV", labelRow: 7, labelColumn: 7},
+        {number: "32", text: "Romeo, to Benvolio", labelRow: 7, labelColumn: 8},
+        {number: "33", text: "Before, to a poet", labelRow: 7, labelColumn: 9},
+        {number: "34", text: 'Egyptian offering to the dead', labelRow: 7, labelColumn: 13},
+        {number: "35", text: "Fameux last word", labelRow: 7, labelColumn: 14},
+        {number: "36", text: "Sticky things", labelRow: 7, labelColumn: 15},
+        {number: "38", text: "Places to lay your feet to rest", labelColumn: 4, labelRow: 8},
+        {number: "39", text: "Dave and Andy’s flavor, for short", labelColumn: 5, labelRow: 8},
+        {number: "43", text: "Viral throat infection type", labelColumn: 11, labelRow: 10},
+        {number: "44", text: "___ thought", labelColumn: 12, labelRow: 10},
+        {number: "45", text: `"Beavis and Butt-Head" spin-off`, labelColumn: 3, labelRow: 11},
+        {number: "46", text: "Car giver?", labelColumn: 7, labelRow: 11},
+        {number: "47", text: 'Have to pay again', labelColumn: 8, labelRow: 11},
+        {number: "48", text: "Fairy tale beginnings", labelColumn: 9, labelRow: 11},
+        {number: "49", text: "—", labelColumn: 10, labelRow: 11},
+        {number: "50", text: "Pot before the kiln", labelColumn: 1, labelRow: 12},
+        {number: "51", text: "Italian capital", labelColumn: 2, labelRow: 12},
+        {number: "54", text: "Drunken sort", labelColumn: 5, labelRow: 13},
+        {number: "56", text: "Jemison in space", labelColumn: 13, labelRow: 13},
+        {number: "57", text: "Picnic crasher", labelColumn: 14, labelRow: 13},
+        {number: "58", text: "Denials", labelColumn: 15, labelRow: 13}
+      ]
+    };
+
+    const insertAfterBegin = (container, content) => {
+      document.getElementsByClassName(container)[0]
+        .insertAdjacentHTML('afterbegin', content);
+    };
+
+    window.onload = () => {
+      // Load puzzle content
+      var serializedPuzzle = [];
+      for(var rowNumber = 0; rowNumber < puzzle.length; rowNumber++) {
+        for(var columnNumber = 0; columnNumber < puzzle[rowNumber].length; columnNumber++) {
+          const item = puzzle[rowNumber][columnNumber];
+          const itemId = `item${rowNumber + 1}-${columnNumber + 1}`;
+
+          if (item === null) {
+            serializedPuzzle.push(`<span class="crossword-board__item--blank" id="${itemId}"></span>`);
+          } else {
+            serializedPuzzle.push(`<input id="${itemId}" class="crossword-board__item" type="text" minlength="1" maxlength="1" pattern="^[${item}${item.toUpperCase()}]{1}$" required="required" value="" />`);
+          }
+        }
+      }
+      insertAfterBegin('crossword-board-for-real', serializedPuzzle.join(''));
+
+      // Load puzzle clues
+      const styleEl = document.createElement('style');
+      document.head.appendChild(styleEl);
+      const styleSheet = styleEl.sheet;
+
+      for(var key in clues) {
+        const keyLower = key.toLowerCase();
+        var serializedClueLabels = [];
+        var serializedClues = [`<dt class="crossword-clues__list-title"></dt>`];
+        // ${key}
+
+        clues[key].forEach((clue) => {
+          //serializedClues.push(`<dd class="crossword-clues__list-item crossword-clues__list-item--${keyLower}-${clue.number}" data-number="${clue.number}">${clue.text}</dd>`);
+          serializedClueLabels.push(`<span id="${keyLower}-${clue.number}" class="crossword-board__item-highlight crossword-board__item-highlight--${keyLower}-${clue.number}"></span>`);
+
+          var labelStyleString = '';
+          if (clue.labelColumn >= 1) {
+            labelStyleString += `grid-column: ${clue.labelColumn}/${clue.labelColumn};`;
+          }
+          if (clue.labelRow > 1) {
+            labelStyleString += `grid-row: ${clue.labelRow}/${clue.labelRow};`;
+          }
+          styleSheet.insertRule(`.crossword-board__item-label--${clue.number} { ${labelStyleString} }`, styleSheet.cssRules.length);
+        });
+
+        insertAfterBegin(`crossword-board--highlight--${keyLower}`, serializedClueLabels.join(''));
+        insertAfterBegin(`crossword-clues__list--${keyLower}`, serializedClues.join(''));
+      }
+
+      // Load labels
+      const max = Math.max.apply(null, [clues.Across.sort((a, b) => { return b.number - a.number; })[0].number, clues.Down.sort((a, b) => { return b.number - a.number; })[0].number]);
+      const serializedLabels = [];
+      for(var i = 1; i <= max; i++) {
+        serializedLabels.push(`<span id="label-${i}" class="crossword-board__item-label crossword-board__item-label--${i}"><span class="crossword-board__item-label-text">${i}</span></span>`);
+      }
+      insertAfterBegin('crossword-board--labels', serializedLabels.join(''));
+    };
+  </script>
+</head>
+
+<body>
+  <input type="checkbox" name="checkvaliditems" id="checkvaliditems" />
+  <label for="checkvaliditems">Check for valid squares</label>
+
+  <div class="crossword-board-container">
+    <div id="crossword-board" class="crossword-board crossword-board-for-real">
+      <div class="crossword-board crossword-board--highlight crossword-board--highlight--across"></div>
+      <div class="crossword-board crossword-board--highlight crossword-board--highlight--down"></div>
+      <div class="crossword-board crossword-board--labels"></div>
+      <div class="crossword-clues">
+        <dl class="crossword-clues__list crossword-clues__list--across"></dl>
+        <dl class="crossword-clues__list crossword-clues__list--down"></dl>
+      </div>
+
+      <div class="crossword-complete">well done, champ!</div>
+    </div>
+  </div>
+</body>
