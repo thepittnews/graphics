@@ -21,7 +21,7 @@ puppeteer.launch().then(async browser => {
   };
 
   const page = await browser.newPage();
-  await page.goto(`file://${currentDirectory}/index-nsg.html`);
+  await page.goto(`file://${currentDirectory}/nsg-2019/index.html`);
   await screenshotDOMElement('div#crossword-board');
 
   browser.close();
