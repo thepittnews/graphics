@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+  <script type='text/javascript' src='https://pittnews.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+</head>
+<body>
+  <div>
+    <button id="mbb-wins-btn">Total wins</button>
+    <button id="mbb-ppg-btn">Points per game</button>
+    <button id="mbb-winpct-btn">Win percentage</button>
+    <button id="mbb-confwinpct-btn">Conference win percentage</button>
+  </div>
+
+  <div style="height: 80vh;">
+    <iframe id="mbb-iframe" src='https://public.flourish.studio/visualisation/189627/embed' width='100%' height='100%' frameborder='0' scrolling='no'></iframe>
+    <div style='width:100%!;margin-top:4px!important;text-align:right!important;'>
+      <a class='flourish-credit' href='https://flourish.studio?utm_source=embed&utm_campaign=visualisation/187897' target='_top' style='text-decoration:none!important'>
+        <img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    jQuery(document).on('ready', () => {
+      const graphics = [
+        { domId: 'wins', flourishId: '189627' },
+        { domId: 'ppg', flourishId: '189638' },
+        { domId: 'winpct', flourishId: '189639' },
+        { domId: 'confwinpct', flourishId: '189643' }
+      ];
+      graphics.forEach((graphic) => {
+        jQuery(`button#mbb-${graphic.domId}-btn`).on('click', (e) => {
+          e.preventDefault();
+          jQuery('iframe#mbb-iframe').attr('src', `https://public.flourish.studio/visualisation/${graphic.flourishId}/embed`);
+        });
+      });
+    });
+  </script>
+</body>
