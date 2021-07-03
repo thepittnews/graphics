@@ -6,7 +6,7 @@ puppeteer.launch().then(async browser => {
     const rect = await page.evaluate((selector) => {
       const element = document.querySelector(selector);
       const { x, y, width, height } = element.getBoundingClientRect();
-      return { left: x, top: y, width: width * 1.155, height: height * 1.155, id: element.id };
+      return { left: x, top: y, width: width * 1.235, height: height * 1.235, id: element.id };
     }, selector);
 
     return await page.screenshot({
